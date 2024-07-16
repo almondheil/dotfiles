@@ -1,7 +1,3 @@
-# Identity files have nonstandard names (.key), so add them
-IdentityFile ~/.ssh/id_rsa.key
-IdentityFile ~/.ssh/id_ed25519.key
-
 # All hosts should forward the key if needed
 Host *
   ForwardAgent yes
