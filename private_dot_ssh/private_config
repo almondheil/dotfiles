@@ -1,0 +1,59 @@
+# Identity files have nonstandard names (.key), so add them
+IdentityFile ~/.ssh/id_rsa.key
+IdentityFile ~/.ssh/id_ed25519.key
+
+# All hosts should forward the key if needed
+Host *
+  ForwardAgent yes
+
+#
+# Home Network
+#
+
+# TrueNAS (on home network)
+Host truenas
+  # HostName 192.168.50.67
+  HostName 73.98.89.95
+  Port 27182
+
+#
+# Grinnell MathLAN
+#
+
+# Match all cs.grinnell.edu hosts, except for the ssh gateway. This causes a loop on my laptop (2024-07-14)
+Match host=*.cs.grinnell.edu,!ssh.cs.grinnell.edu
+  User heilalmond
+  ProxyJump mathlan-gateway
+
+# The SSH gateway
+Host mathlan-gateway
+  HostName ssh.cs.grinnell.edu
+  User heilalmond
+  
+  # Enable shared connection through a socket in my home directory
+  ServerAliveInterval 300
+  ControlMaster auto
+  ControlPath ~/.ssh/sockets/ssh_mux_%h_%p_%r
+
+#
+# Supercomputer Institute
+#
+
+Host usrc
+  HostName usrc.newmexicoconsortium.org
+  User aheil
+
+  # Enable shared connection through a socket in my home directory
+  ServerAliveInterval 300
+  ControlMaster auto
+  ControlPath ~/.ssh/sockets/ssh_mux_%h_%p_%r
+
+Host vp
+  User admin
+  HostName 10.15.3.39
+  ProxyJump usrc
+
+Host cm
+  User aheil
+  HostName cm.si.usrc
+  ProxyJump usrc
