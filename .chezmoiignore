@@ -1,2 +1,8 @@
+# always ignored
 key.txt.age
 README.md
+
+# ignored when not on strawberry (laptop)
+{{- if ne .chezmoi.hostname "strawberry" }}
+private_dot_airvpn
+{{- end }}
