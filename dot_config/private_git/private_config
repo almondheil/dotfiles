@@ -1,0 +1,24 @@
+[user]
+	email = almond@almendra.dev
+	name = almond Heil
+	signingKey = E8AA37A78E5561F0
+[color]
+	ui = auto
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = true
+[core]
+	editor = vim
+[alias]
+	tree = log --graph --oneline
+	slog = log --oneline
+[pull]
+	rebase = false
