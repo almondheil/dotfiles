@@ -1,0 +1,62 @@
+#-------------------------------------------------------------------------------
+# all my favorite ls aliases
+#-------------------------------------------------------------------------------
+
+alias ls="ls --color=auto" # Pretty colors!
+alias la="ls -a"           # All files
+alias ll="ls -lh"          # Long listing
+alias l.="ls -ad .*"       # All dotfiles
+alias lr="ls -lhr"         # Reverse alphabetical
+alias lt="ls -lht"         # Most recent first
+
+#-------------------------------------------------------------------------------
+# useful function definitions
+#-------------------------------------------------------------------------------
+
+# cd into new dir
+mkcd () {
+	mkdir -p -- "$1" && cd -P -- "$1"
+}
+
+# print full path to file
+pwf () {
+	echo $(pwd)/$1
+}
+
+# swap two files, renaming one to the other
+swap() {
+	tmp=`mktemp`
+	mv $1 $tmp
+	mv $2 $1
+	mv $tmp $2
+}
+
+# repeat a command N times
+function repeat() {
+	number = $1
+	shift
+	for n in $(seq $number); do
+		$@
+	done
+}
+
+# fuzzy open file
+# tweaked from https://github.com/junegunn/fzf/wiki/examples#opening-files
+fo() {
+  # fzf over non-hidden files in home dir
+  IFS=$'\n' out=("$(find ~/* -not -path '*/.*' | fzf --query="$1" --exit-0 --expect=ctrl-e,ctrl-o)")
+  key=$(head -1 <<< "$out")
+  file=$(head -2 <<< "$out" | tail -1)
+
+  if [ -n "$file" ]; then
+		# ctrl-e to open in $EDITOR, ctrl-o or enter to xdg-open
+		[ "$key" = ctrl-e ] && ${EDITOR:-vim} "$file" || xdg-open "$file"
+  fi
+}
+
+#-------------------------------------------------------------------------------
+# misc commands
+#-------------------------------------------------------------------------------
+
+alias open="xdg-open"
+alias t="todo.sh"
