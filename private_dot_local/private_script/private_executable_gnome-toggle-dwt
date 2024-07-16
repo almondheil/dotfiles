@@ -1,0 +1,10 @@
+#!/bin/bash
+
+case $(gsettings get org.gnome.desktop.peripherals.touchpad disable-while-typing) in
+	true)
+		gsettings set org.gnome.desktop.peripherals.touchpad disable-while-typing false
+		;;
+	false)
+		gsettings set org.gnome.desktop.peripherals.touchpad disable-while-typing true
+		;;
+esac
