@@ -19,4 +19,16 @@ lvim.plugins = {
 
 lvim.builtin.lualine.style = "default"
 
+-- Change night owl theme settings
+--@param options Config|nil
+local night_owl = require("night-owl")
+night_owl.setup({
+    bold = true,
+    italics = true,
+    underline = true,
+    undercurl = true,
+    transparent_background = false,
+})
+
+
 lvim.colorscheme = "night-owl"
