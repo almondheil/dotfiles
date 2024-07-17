@@ -1,7 +1,9 @@
 [user]
-	email = almond@almendra.dev
+	email = {{ .email | quote }}
 	name = almond Heil
+  {{- if .ssh_gpg }}
 	signingKey = E8AA37A78E5561F0
+  {{- end }}
 [color]
 	ui = auto
 [init]
@@ -11,14 +13,15 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+{{- if .ssh_gpg }}
 [gpg]
 	program = gpg
 [commit]
 	gpgsign = true
+{{- end }}
 [core]
 	editor = vim
 [alias]
-	tree = log --graph --oneline
-	slog = log --oneline
+	lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate=full
 [pull]
 	rebase = false
