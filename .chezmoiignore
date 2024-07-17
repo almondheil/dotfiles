@@ -1,7 +1,12 @@
-# always ignored
 key.txt.age
 README.md
 
-{{- if ne .chezmoi.hostname "strawberry" }}
-.airvpn # only manage airvpn on strawberry
-{{- end }}
+# only manage airvpn on laptop
+{{ if ne .system "laptop" }}
+.airvpn
+{{ end }}
+
+# do not manage ssh config on mathlan
+{{ if eq .system "mathlan" }}
+.ssh/config
+{{ end }}
