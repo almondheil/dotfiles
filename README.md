@@ -7,19 +7,42 @@ Why am I doing this though?
 - I want to learn a new way of working with my dotfiles
 - It seems more flexible when it comes to templates and encryption than yadm, my old dotfiles manager
 
-# Cloning this repo
+# Setup on a new machine
 
-First, clone and apply the repo. It can all be done at once!
+## Install and init
+
+Install `chezmoi` to `~/.local/bin` if you haven't already.
 
 ```
-chezmoi init --apply https://github.com/almondheil/dotfiles.git
+sh -c "$(curl -fsLS get.chezmoi.io/lb)"
 ```
 
-This will prompt for the encryption passphrase and decrypt what's needed, but
-once that's done you need to go to your chezmoi git directory to change it from HTTPS to SSH.
+Initialize it, which will set up `~/.config/chezmoi/chezmoi.toml`.
+
+```
+chezmoi init almondheil
+```
+
+## Set chezmoi data and apply
+
+Edit the file `~/.config/chezmoi/chezmoi.toml`. At the top under the `[data]` heading,
+change the variables to match the machine you're on.
+
+When you are done, apply the changes to your system. This will also prompt for the encryption
+key used to protect the sensitive files in the repo.
+
+```
+chezmoi apply
+```
+
+## Switch to SSH 
+
+Go to the chezmoi directory and update the remote URL to use SSH instead.
+
+Then, exit the shell `chezmoi cd` creates.
 
 ```
 chezmoi cd
 git remote set-url origin git@github.com:almondheil/dotfiles.git
-exit # to get out of `chezmoi cd` shell
+exit
 ```

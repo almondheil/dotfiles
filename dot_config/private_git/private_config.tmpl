@@ -1,8 +1,8 @@
 [user]
 	email = {{ .email | quote }}
 	name = almond Heil
-  {{- if .ssh_gpg }}
-	signingKey = E8AA37A78E5561F0
+  {{- if .git_gpg }}
+	signingKey = {{ .gpg_signing_key }}
   {{- end }}
 [color]
 	ui = auto
@@ -13,7 +13,7 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-{{- if .ssh_gpg }}
+{{- if .git_gpg }}
 [gpg]
 	program = gpg
 [commit]
