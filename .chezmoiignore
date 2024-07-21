@@ -1,12 +1,8 @@
 key.txt.age
 README.md
 
-# only manage airvpn on laptop
+# only manage these private files on my laptop
 {{ if ne .system "laptop" }}
 .airvpn
-{{ end }}
-
-# do not manage ssh config on mathlan
-{{ if eq .system "mathlan" }}
 .ssh/config
 {{ end }}
