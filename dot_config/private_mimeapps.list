@@ -1,0 +1,15 @@
+[Default Applications]
+image/jpeg=org.kde.gwenview.desktop
+image/gif=org.kde.gwenview.desktop
+image/png=org.kde.gwenview.desktop
+application/pdf=okularApplication_pdf.desktop
+image/x-aseprite=aseprite.desktop
+text/markdown=org.kde.ghostwriter.desktop;com.github.marktext.marktext.desktop
+
+[Added Associations]
+image/jpeg=org.kde.gwenview.desktop;
+image/gif=org.kde.gwenview.desktop;
+image/png=org.kde.gwenview.desktop;
+application/pdf=okularApplication_pdf.desktop;
+x-scheme-handler/sms=org.gnome.Shell.Extensions.GSConnect.desktop;
+x-scheme-handler/tel=org.gnome.Shell.Extensions.GSConnect.desktop;
