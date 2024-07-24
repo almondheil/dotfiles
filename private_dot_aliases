@@ -63,7 +63,7 @@ fo() {
 }
 
 # make a backup copy of a file
-backup() {
+bak() {
   # if there's an existing backup, remove it
   rm -rf $1.bak
   cp -r $1 $1.bak
