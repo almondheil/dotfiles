@@ -63,8 +63,8 @@ if ! [[ "$PATH" =~ $DESIRED_PATH ]]; then
 	export PATH="$PATH:$DESIRED_PATH"
 fi
 
-# set umask to take away all file permissions for group and other
-umask 077
+# umask disables writing for group and other
+umask 022
 
 #-------------------------------------------------------------------------------
 # Do random stuff if I have the requisites installed
