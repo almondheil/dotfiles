@@ -1,2 +1,5 @@
 # ctags files, generated with ctags -R *
 tags
+
+# vim swapfiles, for when a file is open
+*.swp
