@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# this assumes you don't set ANY other xkb-options, it would be better to do it better. but I don't wanna
+case $(gsettings get org.gnome.desktop.input-sources xkb-options) in
+  "@as []")
+    gsettings set org.gnome.desktop.input-sources xkb-options "['caps:swapescape']"
+    ;;
+  "['caps:swapescape']")
+    gsettings set org.gnome.desktop.input-sources xkb-options "[]"
+    ;;
+esac
