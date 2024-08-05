@@ -1,3 +1,4 @@
+{{ if eq .system "laptop" }}
 #!/bin/bash
 mkdir -p $HOME/.config/qBittorrent
 
@@ -8,3 +9,4 @@ Session\Port=58442
 
 [LegalNotice]
 Accepted=true" > $HOME/.config/qBittorrent/qBittorrent.conf
+{{ end }}
