@@ -26,39 +26,32 @@ esac
 # AUR managers and pacman as a fallback
 if command -v paru > /dev/null; then
 	echo -e "\nUpdating system packages and AUR"
-	echo "$ paru -Syu $PACMAN_YES"
-	paru -Syu $PACMAN_YES
+  (set -x; paru -Syu $PACMAN_YES)
 elif command -v yay > /dev/null; then
 	echo -e "\nUpdating system packages and AUR"
-	echo "$ yay -Syu $PACMAN_YES"
-	yay -Syu $PACMAN_YES
+  (set -x; yay -Syu $PACMAN_YES)
 elif command -v pacman > /dev/null; then
 	echo -e "\nUpdating system packages"
-	echo "$ sudo pacman -Syu $PACMAN_YES"
-	sudo pacman -Syu $PACMAN_YES
+  (set -x; pacman -Syu $PACMAN_YES)
 fi
 
 # apt
 if command -v apt-get > /dev/null; then
 	echo -e "\nUpdating system packages"
-	echo "$ sudo apt-get update $DEFAULT_YES"
-	sudo apt-get update $DEFAULT_YES
-	echo "$ sudo apt-get upgrade $DEFAULT_YES"
-	sudo apt-get upgrade $DEFAULT_YES
+  (set -x; sudo apt-get update $DEFAULT_YES)
+  (set -x; sudo apt-get upgrade $DEFAULT_YES)
 fi
 
 # dnf
 if command -v dnf > /dev/null; then
 	echo -e "\nUpgrading system packages"
-	echo "$ sudo dnf update $DEFAULT_YES"
-	sudo dnf update $DEFAULT_YES
+  (set -x; sudo dnf update $DEFAULT_YES)
 fi
 
 # flatpak
 if command -v flatpak > /dev/null; then
 	echo -e "\nUpdating Flatpak packages..."
-	echo "$ flatpak update $DEFAULT_YES"
-	flatpak update $DEFAULT_YES
+  (set -x; flatpak update $DEFAULT_YES)
 fi
 
 # on fedora, use the needs-restarting util to check if a reboot is needed
