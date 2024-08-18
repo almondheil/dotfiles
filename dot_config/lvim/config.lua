@@ -5,6 +5,10 @@
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
 lvim.plugins = {
+  --
+  -- Theme
+  --
+
   {
     "oxfist/night-owl.nvim",
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
@@ -14,7 +18,13 @@ lvim.plugins = {
       require("night-owl").setup()
       vim.cmd.colorscheme("night-owl")
     end,
-  }
+  },
+
+  --
+  -- LSP
+  --
+
+  { "simrat39/rust-tools.nvim" },
 }
 
 lvim.builtin.lualine.style = "default"
@@ -28,6 +38,20 @@ night_owl.setup({
     underline = true,
     undercurl = true,
     transparent_background = false,
+})
+
+
+-- LSP setup for rust-tools
+local rt = require("rust-tools")
+rt.setup({
+  server = {
+    on_attach = function(_, bufnr)
+      -- Hover actions
+      vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+      -- Code action groups
+      vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+    end,
+  },
 })
 
 
