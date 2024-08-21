@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# copy_config SRC DEST
+#   works sort of like Ansible's copy, only bad because I wrote it.
+# 
+# SRC  - the source name of the file, in `one_time_configs` directory of this chezmoi repo
+# DEST - the full path of the destination it must be copied to
+copy_config() {
+  cp "{{ .chezmoi.sourceDir }}/one_time_configs/${1}" "${2}"
+}
+
+#-------------------------------------------------------------------------------
+# Call copy_config below as needed
+#
+# Don't call it wrong, or I'll die of shame (aka no error checking)
+#-------------------------------------------------------------------------------
+
+copy_config "qBittorrent.conf" "$HOME/.config/qBittorrent/qBittorrent.conf"
+copy_config "aseprite.ini" "$HOME/.config/aseprite/aseprite.ini"

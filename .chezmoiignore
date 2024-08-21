@@ -1,5 +1,6 @@
 key.txt.age
 README.md
+one_time_configs
 
 # only manage these private files on my laptop
 {{ if ne .system "laptop" }}
