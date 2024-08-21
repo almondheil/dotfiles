@@ -1,0 +1,7 @@
+#!/bin/bash
+{{ if eq .system "laptop" }}
+
+mkdir -p "$HOME/.config/qBittorrent"
+cp "{{ .chezmoi.sourceDir }}/one_time_configs/qBittorrent.conf" "$HOME/.config/qBittorrent/qBittorrent.conf"
+
+{{ end }}
