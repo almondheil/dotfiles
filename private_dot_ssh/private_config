@@ -30,26 +30,3 @@ Host mathlan-gateway
   ServerAliveInterval 300
   ControlMaster auto
   ControlPath ~/.ssh/sockets/ssh_mux_%h_%p_%r
-
-#
-# Supercomputer Institute
-#
-
-Host usrc
-  HostName usrc.newmexicoconsortium.org
-  User aheil
-
-  # Enable shared connection through a socket in my home directory
-  ServerAliveInterval 300
-  ControlMaster auto
-  ControlPath ~/.ssh/sockets/ssh_mux_%h_%p_%r
-
-Host vp
-  User admin
-  HostName 10.15.3.39
-  ProxyJump usrc
-
-Host cm
-  User aheil
-  HostName cm.si.usrc
-  ProxyJump usrc
