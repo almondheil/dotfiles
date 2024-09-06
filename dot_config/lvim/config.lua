@@ -54,5 +54,12 @@ rt.setup({
   },
 })
 
+-- OCAML SETTINGS
+-- Indent
+vim.cmd('set rtp^=/home/almond/.opam/default/share/ocp-indent/vim')
+-- LSP
+local ml = require("lspconfig")
+ml.ocamllsp.setup({})
 
+-- Colorscheme (set at end of file)
 lvim.colorscheme = "night-owl"
