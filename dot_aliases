@@ -19,6 +19,7 @@ alias open="xdg-open"
 alias t="todo.sh"
 alias cm="chezmoi"
 alias pwf="realpath"
+alias prsync="rsync -h --info=progress2"
 
 #-------------------------------------------------------------------------------
 # useful function definitions
