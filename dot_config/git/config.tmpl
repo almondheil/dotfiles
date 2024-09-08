@@ -1,27 +1,28 @@
 [user]
-	email = {{ .email | quote }}
-	name = almond Heil
+  email = {{ .email | quote }}
+  name = almond Heil
   {{- if .git_gpg }}
-	signingKey = {{ .gpg_signing_key }}
+  signingKey = {{ .gpg_signing_key }}
   {{- end }}
 [color]
-	ui = auto
+  ui = auto
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 {{- if .git_gpg }}
 [gpg]
-	program = gpg
+  program = gpg
 [commit]
-	gpgsign = true
+  gpgsign = true
 {{- end }}
 [core]
-	editor = vim
+  editor = vim
 [alias]
-	lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate=full
+  lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate=full
+  sd = diff --staged
 [pull]
-	rebase = false
+  rebase = false
