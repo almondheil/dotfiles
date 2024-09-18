@@ -15,7 +15,6 @@ alias lt="ls -lht"         # Most recent first
 # not really a real category they're just nice
 #-------------------------------------------------------------------------------
 
-alias open="xdg-open"
 alias t="todo.sh"
 alias cm="chezmoi"
 alias pwf="realpath"
