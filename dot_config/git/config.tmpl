@@ -26,3 +26,7 @@
   sd = diff --staged
 [pull]
   rebase = false
+{{- if eq .system "mathlan" }}
+[safe]
+  directory = *
+{{- end }}
