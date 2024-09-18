@@ -101,7 +101,7 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 
 # Oh my zsh theme
-ZSH_THEME="gentoo"
+ZSH_THEME="lukerandall"
 
 # Remind me of omz updates, checking every 13 days
 zstyle ':omz:update' mode reminder
