@@ -64,7 +64,7 @@ export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 
 # Set PATH to include important stuff
-DESIRED_PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.local/script:$HOME/.ghcup/bin:$HOME/.gems/bin:$HOME/.local/share/gem/ruby/3.0.0/bin"
+DESIRED_PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.local/script:$HOME/.ghcup/bin:$HOME/.gems/bin:$HOME/.local/share/gem/ruby/3.2.0/bin"
 if ! [[ "$PATH" =~ $DESIRED_PATH ]]; then
 	export PATH="$PATH:$DESIRED_PATH"
 fi
