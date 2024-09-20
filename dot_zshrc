@@ -117,9 +117,6 @@ fi
 # Source oh my zsh
 source $ZSH/oh-my-zsh.sh
 
-# Theme tweak: change theme ps1 to have a %, not a >> character
-export PS1="%{$fg_bold[green]%}%n@%m%{$reset_color%} %{$fg_bold[blue]%}%2~%{$reset_color%} $(my_git_prompt_info)%{$reset_color%}%B%% %b"
-
 # I don't like the `l` alias much
 unalias l
 
