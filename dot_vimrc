@@ -1,0 +1,45 @@
+""" PLUGINS
+
+call plug#begin()
+
+" tpope's sensible defaults
+Plug 'tpope/vim-sensible'
+
+call plug#end()
+
+" use both relative and absolute line numbers
+set nu
+set rnu
+
+" attempt to detect filetypes, and use the filetype to
+" - set indentation
+" - load plugins
+" - enable syntax highlighting
+filetype on
+filetype plugin on
+filetype indent on
+syntax on
+
+" highlight the current line
+set cursorline
+
+" don't wrap lines automatically
+set nowrap
+
+" when searching, highlight as you type
+set incsearch
+
+" when searching in lowercase ignore case, but when searching in caps don't
+set ignorecase
+set smartcase
+
+" show current mode in the bottom bar
+set showmode
+
+" show matching words as we search, and highlight them
+set showmatch
+set hlsearch
+
+" enable autocomplete in menus on tab
+set wildmenu
+set wildmode=longest:full,full
