@@ -1,15 +1,38 @@
-""" PLUGINS
+" disable vi compatibility
+set nocompatible
+
+" show current mode in the bottom bar
+set showmode
+
+" use both relative and absolute line numbers
+" (absolute for current line, relative above & below)
+set nu
+set rnu
+
+" don't wrap lines automatically
+set nowrap
+
+" highlight the line the cursor is on right now
+set cursorline
+
+" PLUGINS {{{
 
 call plug#begin()
 
-" tpope's sensible defaults
-Plug 'tpope/vim-sensible'
+" a bunch of tpope's amazing plugins
+Plug 'tpope/vim-sensible'  " sensible defaults
+Plug 'tpope/vim-sleuth'    " detect indent options per-file
+Plug 'tpope/vim-fugitive'  " git wrapper, :G or :Git
+Plug 'tpope/vim-surround'  " work with parentheses and other 'surroundings'
+
+" papercolor colorscheme
+Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
 
-" use both relative and absolute line numbers
-set nu
-set rnu
+" }}}
+
+" SYNTAX & FILETYPE RECOGNITION {{{
 
 " attempt to detect filetypes, and use the filetype to
 " - set indentation
@@ -20,26 +43,41 @@ filetype plugin on
 filetype indent on
 syntax on
 
-" highlight the current line
-set cursorline
+" }}}
 
-" don't wrap lines automatically
-set nowrap
+" SEARCHING {{{
 
 " when searching, highlight as you type
 set incsearch
 
-" when searching in lowercase ignore case, but when searching in caps don't
+" eg searching "hi" matches "hi" and "HI", but searching "HI" only matches "HI"
 set ignorecase
 set smartcase
 
-" show current mode in the bottom bar
-set showmode
-
-" show matching words as we search, and highlight them
+" show matching words as we search and highlight them
 set showmatch
 set hlsearch
+
+" }}}
+
+" VIM MENU {{{
 
 " enable autocomplete in menus on tab
 set wildmenu
 set wildmode=longest:full,full
+
+" }}}
+
+" FILETYPES {{{
+
+autocmd FileType vim setlocal foldmethod=marker
+
+" }}}
+
+" COLORSCHEME {{{
+
+" load PaperColor theme, telling it 
+set background=light
+colorscheme PaperColor
+
+" }}}
