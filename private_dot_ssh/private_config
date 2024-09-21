@@ -17,7 +17,7 @@ Host truenas
 #
 
 # Match all cs.grinnell.edu hosts, except for the ssh gateway. This causes a loop on my laptop (2024-07-14)
-Match host=*.cs.grinnell.edu,!ssh.cs.grinnell.edu
+Host *.cs.grinnell.edu !ssh.cs.grinnell.edu
   User heilalmond
   ProxyJump mathlan-gateway
 
