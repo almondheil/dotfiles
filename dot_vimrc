@@ -79,8 +79,8 @@ autocmd FileType vim setlocal foldmethod=marker
 
 " COLORSCHEME {{{
 
-" load PaperColor theme, telling it 
-set background=light
+" load the PaperColor theme, in dark mode (can be changed during session)
+set background=dark
 colorscheme PaperColor
 
 " }}}
