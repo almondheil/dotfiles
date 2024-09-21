@@ -25,6 +25,9 @@ Plug 'tpope/vim-sleuth'    " detect indent options per-file
 Plug 'tpope/vim-fugitive'  " git wrapper, :G or :Git
 Plug 'tpope/vim-surround'  " work with parentheses and other 'surroundings'
 
+" preview search+replace (and some other stuff too apparently)
+Plug 'markonm/traces.vim'
+
 " papercolor colorscheme
 Plug 'NLKNguyen/papercolor-theme'
 
