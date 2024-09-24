@@ -69,7 +69,7 @@ if ! [[ "$PATH" =~ $DESIRED_PATH ]]; then
 	export PATH="$PATH:$DESIRED_PATH"
 fi
 
-# umask disables writing for group and other
+# set umask to be pretty lax on permissions by default
 umask 022
 
 #-------------------------------------------------------------------------------
