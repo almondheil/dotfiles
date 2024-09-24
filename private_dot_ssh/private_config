@@ -20,6 +20,7 @@ Host truenas
 Host *.cs.grinnell.edu !ssh.cs.grinnell.edu
   User heilalmond
   ProxyJump mathlan-gateway
+  StrictHostKeyChecking no
 
 # The SSH gateway
 Host mathlan-gateway
