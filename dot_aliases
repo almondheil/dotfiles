@@ -2,9 +2,6 @@
 # all my favorite ls aliases
 #-------------------------------------------------------------------------------
 
-# TEMPORARY: change ls colors, to minimize how annoying nextcloud permissions bug is
-eval "`dircolors -b ~/.dircolors`"
-
 alias ls="ls --color=auto" # Pretty colors!
 alias la="ls -a"           # All files
 alias ll="ls -lh"          # Long listing
