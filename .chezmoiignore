@@ -5,5 +5,6 @@ one_time_configs
 # only manage these private files on my laptop
 {{ if ne .system "laptop" }}
 .airvpn
-.ssh/config
+.ssh/*
+*.age
 {{ end }}
