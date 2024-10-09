@@ -69,8 +69,8 @@ if ! [[ "$PATH" =~ $DESIRED_PATH ]]; then
 	export PATH="$PATH:$DESIRED_PATH"
 fi
 
-# set umask to be pretty lax on permissions by default
-umask 022
+# keep file permissions tight by default
+umask 077
 
 #-------------------------------------------------------------------------------
 # Do random stuff if I have the requisites installed
