@@ -73,7 +73,11 @@ set wildmode=longest:full,full
 
 " FILETYPES {{{
 
+" fold on markers for vimrc
 autocmd FileType vim setlocal foldmethod=marker
+
+" enable folding in markdown files too
+let g:markdown_folding = 1
 
 " }}}
 
@@ -82,5 +86,8 @@ autocmd FileType vim setlocal foldmethod=marker
 " load the PaperColor theme, in dark mode (can be changed during session)
 set background=dark
 colorscheme PaperColor
+
+" disable background erase to avoid stupid color mismatch (default is y)
+set t_ut=
 
 " }}}
