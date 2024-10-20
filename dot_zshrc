@@ -47,6 +47,10 @@ unset __conda_setup
 # fix utop not finding libraries on Arch (https://github.com/ocaml-community/utop/issues/112#issuecomment-1842108174)
 export OCAMLPATH="$HOME/.opam/default/lib"
 
+# set path to golang, both system path and gopath
+export GOPATH="$HOME/.go"
+export PATH="$GOPATH/bin:$PATH"
+
 #-------------------------------------------------------------------------------
 # Setting important variables
 #-------------------------------------------------------------------------------
