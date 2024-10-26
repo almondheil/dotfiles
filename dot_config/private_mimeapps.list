@@ -11,6 +11,7 @@ video/x-matroska=vlc.desktop
 text/plain=vim.desktop
 application/zip=org.gnome.Nautilus.desktop
 audio/vnd.wave=vlc.desktop
+audio/flac=vlc.desktop
 
 [Added Associations]
 image/jpeg=org.kde.gwenview.desktop;
@@ -25,3 +26,4 @@ video/x-matroska=vlc.desktop;
 text/plain=vim.desktop;
 application/zip=org.gnome.Nautilus.desktop;
 audio/vnd.wave=vlc.desktop;
+audio/flac=vlc.desktop;
