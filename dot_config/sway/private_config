@@ -12,10 +12,10 @@ set $mod Mod4
 set $left Left
 set $down Down
 set $up Up
-set $right l
+set $right Right
 # Your preferred terminal emulator
 set $term kitty
-set $browser firefox
+set $browser org.mozilla.firefox
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -128,9 +128,7 @@ input "2362:628:PIXA3854:00_093A:0274_Touchpad" {
 #
 # Layout stuff:
 #
-    # Emulate vim's split shortcuts.
-    # note that "vertical split" in vim is what sway thinks of as "horizontal split"
-    # (when the line between windows is vertical, so the next window is right of the current)
+    # Emulate vim's split shortcuts, s to split below and v to split to the side
     bindsym $mod+s splitv
     bindsym $mod+v splith
 
