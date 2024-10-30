@@ -16,6 +16,5 @@ hinding_title_bar=false
 [Window]
 DynamicTabTitles=true
 Height=70
-KeepOpen=false
 ShowSystrayIcon=false
 ShowTitleBar=false
