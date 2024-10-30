@@ -254,7 +254,7 @@ toggle do not disturb=none,,Toggle do not disturb
 [services][org.kde.spectacle.desktop]
 FullScreenScreenShot=none
 RecordWindow=none
-RectangularRegionScreenShot=
+RectangularRegionScreenShot=Print
 _launch=Shift+Print\tMeta+Shift+S
 
 [services][org.mozilla.firefox.desktop]
