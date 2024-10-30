@@ -28,8 +28,9 @@ Plug 'tpope/vim-surround'  " work with parentheses and other 'surroundings'
 " preview search+replace (and some other stuff too apparently)
 Plug 'markonm/traces.vim'
 
-" papercolor colorscheme
+" colorschemes
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'haishanh/night-owl.vim'
 
 call plug#end()
 
@@ -83,9 +84,7 @@ let g:markdown_folding = 1
 
 " COLORSCHEME {{{
 
-" load the PaperColor theme, in dark mode (can be changed during session)
-set background=dark
-colorscheme PaperColor
+colorscheme night-owl
 
 " disable background erase to avoid stupid color mismatch (default is y)
 set t_ut=
