@@ -29,8 +29,7 @@ Plug 'tpope/vim-surround'  " work with parentheses and other 'surroundings'
 Plug 'markonm/traces.vim'
 
 " colorschemes
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'haishanh/night-owl.vim'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
@@ -90,8 +89,12 @@ set foldlevelstart=99
 
 " COLORSCHEME {{{
 
-set background=dark
-colorscheme PaperColor
+" enable gruvbox colorscheme, needs termguicolors set to look correct
+if exists('$BASE16_THEME')
+      \ && (!exists('g:colors_name') || g:colors_name != 'base16-$BASE16_THEME')
+    let base16colorspace=256
+    colorscheme base16-$BASE16_THEME
+endif
 
 " disable background erase to avoid stupid color mismatch (default is y)
 set t_ut=
