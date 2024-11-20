@@ -1,3 +1,6 @@
+[Editor]
+ToolBarsMovable=Disabled
+
 [GPG Settings]
 gpg_config_path[$e]=$HOME/.gnupg/gpg.conf
 
