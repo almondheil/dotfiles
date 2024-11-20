@@ -76,26 +76,10 @@ fi
 # keep file permissions tight by default
 umask 077
 
-#-------------------------------------------------------------------------------
-# Do random stuff if I have the requisites installed
-#-------------------------------------------------------------------------------
-
-# lunarvim as the editor, if it's a command. Otherwise, regular vim
-if command -v lvim > /dev/null; then
-  export EDITOR=lvim
-else
-  export EDITOR=vim
-fi
+export EDITOR=vim
 
 # don't activate less if there is less than one screen of input
 export LESS="--no-init --quit-if-one-screen -R"
-
-# use bat as the manpager if it's installed
-if command -v bat > /dev/null
-then
-  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-  export MANROFFOPT="-c"
-fi
 
 #-------------------------------------------------------------------------------
 # oh-my-zsh specific
