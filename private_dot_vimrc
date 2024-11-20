@@ -47,6 +47,9 @@ filetype plugin on
 filetype indent on
 syntax on
 
+" when you press enter, keep cursor at the same indent level by default
+set smartindent
+
 " }}}
 
 " SEARCHING {{{
@@ -80,11 +83,15 @@ autocmd FileType vim setlocal foldmethod=marker
 " enable folding in markdown files too
 let g:markdown_folding = 1
 
+" setting to 99 means when file opens, all folds up to level 99 will be open
+set foldlevelstart=99
+
 " }}}
 
 " COLORSCHEME {{{
 
-colorscheme night-owl
+set background=dark
+colorscheme PaperColor
 
 " disable background erase to avoid stupid color mismatch (default is y)
 set t_ut=
