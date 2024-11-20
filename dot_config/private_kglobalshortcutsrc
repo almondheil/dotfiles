@@ -251,6 +251,9 @@ switch to next activity=none,,Switch to Next Activity
 switch to previous activity=none,,Switch to Previous Activity
 toggle do not disturb=none,,Toggle do not disturb
 
+[services][kitty.desktop]
+_launch=Meta+T
+
 [services][org.kde.spectacle.desktop]
 FullScreenScreenShot=none
 RecordWindow=none
@@ -274,4 +277,4 @@ _k_friendly_name=Wacom Tablet
 
 [yakuake]
 _k_friendly_name=Yakuake
-toggle-window-state=Meta+T\tMeta+Q,F12,Open/Retract Yakuake
+toggle-window-state=Meta+Q,F12,Open/Retract Yakuake
