@@ -89,7 +89,7 @@ set foldlevelstart=99
 
 " COLORSCHEME {{{
 
-" enable gruvbox colorscheme, needs termguicolors set to look correct
+" enable gruvbox colorscheme
 if exists('$BASE16_THEME')
       \ && (!exists('g:colors_name') || g:colors_name != 'base16-$BASE16_THEME')
     let base16colorspace=256
