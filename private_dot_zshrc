@@ -78,12 +78,12 @@ export EDITOR=vim
 # don't activate less if there is less than one screen of input
 export LESS="--no-init --quit-if-one-screen -R"
 
-# enable base16 shell and load gruvbox dark hard
+# enable base16 shell and load a theme
 BASE16_SHELL="$HOME/.base16-shell/"
 [ -n "$PS1" ] && \
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         source "$BASE16_SHELL/profile_helper.sh"
-base16_gruvbox-dark-hard
+base16_unikitty-dark
 
 #-------------------------------------------------------------------------------
 # oh-my-zsh specific
