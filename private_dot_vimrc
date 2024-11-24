@@ -96,6 +96,12 @@ if exists('$BASE16_THEME')
     colorscheme base16-$BASE16_THEME
 endif
 
+" apply tweaks whenever colorscheme changes
+augroup on_change_colorschema
+  autocmd!
+  autocmd ColorScheme * call s:base16_customize()
+augroup END
+
 " disable background erase to avoid stupid color mismatch (default is y)
 set t_ut=
 
