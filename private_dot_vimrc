@@ -49,6 +49,9 @@ syntax on
 " when you press enter, keep cursor at the same indent level by default
 set smartindent
 
+" let ocp-indent package work in vim
+set rtp^="/home/almond/.opam/default/share/ocp-indent/vim"
+
 " }}}
 
 " SEARCHING {{{
