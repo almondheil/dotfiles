@@ -223,7 +223,7 @@ powerProfile=Battery,Battery\tMeta+B,Switch Power Profile
 
 [plasmashell]
 _k_friendly_name=plasmashell
-activate application launcher=Meta\tAlt+F1,Meta\tAlt+F1,Activate Application Launcher
+activate application launcher=Alt+F1,Meta\tAlt+F1,Activate Application Launcher
 activate task manager entry 1=none,Meta+1,Activate Task Manager Entry 1
 activate task manager entry 10=none,Meta+0,Activate Task Manager Entry 10
 activate task manager entry 2=none,Meta+2,Activate Task Manager Entry 2
@@ -253,6 +253,9 @@ toggle do not disturb=none,,Toggle do not disturb
 
 [services][kitty.desktop]
 _launch=Meta+T
+
+[services][org.kde.krunner.desktop]
+_launch=Meta+Space\tSearch\tAlt+F2\tAlt+Space
 
 [services][org.kde.spectacle.desktop]
 FullScreenScreenShot=none
