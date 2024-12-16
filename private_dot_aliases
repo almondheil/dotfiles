@@ -15,6 +15,7 @@ alias lt="ls -lht"         # Most recent first
 alias t="todo.sh"
 alias cm="chezmoi"
 alias pwf="realpath"
+alias note="gonote"
 alias prsync="rsync -rvh --info=progress2"
 
 #-------------------------------------------------------------------------------
