@@ -7,6 +7,7 @@ RightButton;NoModifier=org.kde.contextmenu
 [Containments][1]
 ItemGeometries-1128x752=
 ItemGeometries-1504x1003=
+ItemGeometries-960x540=
 ItemGeometriesHorizontal=
 activityId=254da71b-1f3b-4ca6-bfda-b0aa795b9be0
 formfactor=0
@@ -16,8 +17,13 @@ location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
+[Containments][1][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
 [Containments][1][Wallpaper][org.kde.image][General]
-Image=/home/almond/Nextcloud/Pictures/Wallpapers/celeste/celeste-madeline-holding-strawberry.jpg
+Image=/home/almond/Nextcloud/Pictures/Wallpapers/hk-lake-of-unn.png
+PreviewImage=/home/almond/Nextcloud/Pictures/Wallpapers/hk-lake-of-unn.png
 SlidePaths=/usr/share/wallpapers/
 
 [Containments][2]
@@ -102,6 +108,15 @@ SystrayContainmentId=8
 [Containments][2][General]
 AppletOrder=3;4;5;7;20;21
 
+[Containments][29]
+activityId=254da71b-1f3b-4ca6-bfda-b0aa795b9be0
+formfactor=0
+immutability=1
+lastScreen=1
+location=0
+plugin=org.kde.plasma.folder
+wallpaperplugin=org.kde.image
+
 [Containments][8]
 activityId=
 formfactor=2
@@ -121,7 +136,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][8][Applets][11][Configuration]
-PreloadWeight=65
+PreloadWeight=100
 
 [Containments][8][Applets][12]
 immutability=1
@@ -169,7 +184,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][22][Configuration]
-PreloadWeight=33
+PreloadWeight=81
 
 [Containments][8][Applets][23]
 immutability=1
@@ -183,14 +198,14 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=10
+PreloadWeight=5
 
 [Containments][8][Applets][25]
 immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][25][Configuration]
-PreloadWeight=96
+PreloadWeight=83
 
 [Containments][8][Applets][26]
 immutability=1
@@ -198,10 +213,17 @@ plugin=org.kde.plasma.clipboard
 
 [Containments][8][Applets][27]
 immutability=1
-plugin=org.kde.plasma.mediacontroller
+plugin=org.kde.kdeconnect
 
 [Containments][8][Applets][27][Configuration]
 PreloadWeight=0
+
+[Containments][8][Applets][28]
+immutability=1
+plugin=org.kde.plasma.mediacontroller
+
+[Containments][8][Applets][28][Configuration]
+PreloadWeight=10
 
 [Containments][8][Applets][9]
 immutability=1
@@ -212,9 +234,9 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][8][General]
-extraItems=org.kde.plasma.bluetooth,org.kde.plasma.cameraindicator,org.kde.plasma.devicenotifier,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.plasma.keyboardindicator,org.kde.kscreen,org.kde.plasma.battery,org.kde.plasma.brightness,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.volume,org.kde.plasma.vault,org.kde.plasma.printmanager,org.kde.plasma.clipboard
+extraItems=org.kde.plasma.bluetooth,org.kde.plasma.cameraindicator,org.kde.plasma.devicenotifier,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.plasma.keyboardindicator,org.kde.kscreen,org.kde.plasma.battery,org.kde.plasma.brightness,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.volume,org.kde.plasma.vault,org.kde.plasma.printmanager,org.kde.plasma.clipboard,org.kde.kdeconnect
 hiddenItems=org.kde.plasma.clipboard
-knownItems=org.kde.plasma.bluetooth,org.kde.plasma.cameraindicator,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.plasma.keyboardindicator,org.kde.kscreen,org.kde.plasma.battery,org.kde.plasma.brightness,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.volume,org.kde.plasma.vault,org.kde.plasma.printmanager
+knownItems=org.kde.plasma.bluetooth,org.kde.plasma.cameraindicator,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.manage-inputmethod,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.plasma.keyboardindicator,org.kde.kscreen,org.kde.plasma.battery,org.kde.plasma.brightness,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.volume,org.kde.plasma.vault,org.kde.plasma.printmanager,org.kde.kdeconnect
 shownItems=Nextcloud,chrome_status_icon_1
 
 [ScreenMapping]
