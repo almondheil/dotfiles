@@ -1,5 +1,8 @@
 #!/bin/sh -efu
 
+# a script to split a file by chapter. good for the chapters created by
+# handbrake and splitting them into individual videos for Jellyfin
+
 if [ "$#" -ne 1 ]; then
   echo "Usage: $(basename $0) <filename>"
   exit 1
