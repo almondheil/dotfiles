@@ -17,6 +17,7 @@ alias cm="chezmoi"
 alias pwf="realpath"
 alias note="gonote"
 alias prsync="rsync -rvh --info=progress2"
+alias trash-ls="trash-list"
 
 #-------------------------------------------------------------------------------
 # useful function definitions
