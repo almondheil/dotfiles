@@ -6,14 +6,14 @@
 # absolute path. No other format is supported.
 # 
 {{- if eq .system "laptop" }}
-XDG_DESKTOP_DIR="$HOME/Desktop"
-XDG_DOWNLOAD_DIR="$HOME/Downloads"
-XDG_TEMPLATES_DIR="$HOME/Templates"
-XDG_PUBLICSHARE_DIR="$HOME/Public"
-XDG_DOCUMENTS_DIR="$HOME/Nextcloud/Documents"
-XDG_MUSIC_DIR="$HOME/Nextcloud/Music"
-XDG_PICTURES_DIR="$HOME/Nextcloud/Pictures"
-XDG_VIDEOS_DIR="$HOME/Nextcloud/Videos"
+XDG_DESKTOP_DIR="$HOME/nextcloud/Desktop"
+XDG_DOCUMENTS_DIR="$HOME/nextcloud/Documents"
+XDG_DOWNLOAD_DIR="$HOME/download"
+XDG_MUSIC_DIR="$HOME/nextcloud/Music"
+XDG_PICTURES_DIR="$HOME/nextcloud/Pictures"
+XDG_PUBLICSHARE_DIR="$HOME/nextcloud/Public"
+XDG_TEMPLATES_DIR="$HOME/nextcloud/Templates"
+XDG_VIDEOS_DIR="$HOME/nextcloud/Videos"
 {{- else if eq .system "mathlan" }}
 XDG_DOWNLOAD_DIR="$HOME/Downloads"
 XDG_DOCUMENTS_DIR="$HOME/Documents"
