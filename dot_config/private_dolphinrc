@@ -1,3 +1,5 @@
+MenuBar=Disabled
+
 [DetailsMode]
 PreviewSize=16
 
@@ -5,6 +7,9 @@ PreviewSize=16
 RememberOpenedTabs=false
 Version=202
 ViewPropsTimestamp=2024,10,26,22,29,24.995
+
+[IconsMode]
+PreviewSize=112
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false
