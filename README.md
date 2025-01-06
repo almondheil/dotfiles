@@ -11,7 +11,7 @@ Why am I doing this though?
 
 ## Install and init
 
-Install `chezmoi` to `~/.local/bin` if you haven't already.
+Install `chezmoi`. This oneliner installs to `~/.local/bin`.
 
 ```
 sh -c "$(curl -fsLS get.chezmoi.io/lb)"
@@ -22,6 +22,8 @@ Initialize it, which will set up `~/.config/chezmoi/chezmoi.toml`.
 ```
 chezmoi init almondheil
 ```
+
+Also install `chezmoi_modify_manager` from wherever is easiest (maybe cargo). https://github.com/VorpalBlade/chezmoi_modify_manager
 
 ## Set chezmoi data and apply
 
