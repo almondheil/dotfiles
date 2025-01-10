@@ -106,6 +106,6 @@ convertall() {
   for name in *.$from; do
     # remove old ext and pin on the new one
     newname="${name%.$from}.$to"
-    magick "$name" "$newname" && rm "$file"
+    magick "$name" "$newname" && rm "$name"
   done
 }
