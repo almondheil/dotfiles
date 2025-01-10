@@ -1,4 +1,4 @@
-note_dir: $HOME/Notes
+note_dir: $HOME/nextcloud/Notes
 extension: .md
 editor: vim
 list_threads: 4
