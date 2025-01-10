@@ -29,6 +29,9 @@ alias prsync="rsync -rvh --info=progress2"
 # switch two files with each other
 alias swap='mv --exchange'
 
+# run feh with a black background
+alias feh='feh -B black'
+
 #-------------------------------------------------------------------------------
 # useful function definitions
 #-------------------------------------------------------------------------------
