@@ -93,8 +93,7 @@ set foldlevelstart=99
 
 " COLORSCHEME {{{
 
-set background=dark
-colorscheme PaperColor
+colorscheme night-owl
 
 " disable background erase to avoid stupid color mismatch (default is y)
 set t_ut=
