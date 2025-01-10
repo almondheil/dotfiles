@@ -93,6 +93,11 @@ set foldlevelstart=99
 
 " COLORSCHEME {{{
 
+" enable 24-bit color if it is available
+if (has("termguicolors"))
+ set termguicolors
+endif
+
 colorscheme night-owl
 
 " disable background erase to avoid stupid color mismatch (default is y)
