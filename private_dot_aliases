@@ -1,23 +1,33 @@
 #-------------------------------------------------------------------------------
-# all my favorite ls aliases
+# all my favorite aliases
 #-------------------------------------------------------------------------------
 
-alias ls="ls --color=auto" # Pretty colors!
+# ls
+alias ls="ls --color=auto"
 alias la="ls -a"           # All files
 alias ll="ls -lh"          # Long listing
 alias lr="ls -lhr"         # Reverse alphabetical
 alias lt="ls -lht"         # Most recent first
 
-#-------------------------------------------------------------------------------
-# not really a real category they're just nice
-#-------------------------------------------------------------------------------
-
-alias t="todo.sh"
+# just shortenings and renamings
 alias cm="chezmoi"
-alias pwf="realpath"
 alias note="gonote"
-alias prsync="rsync -rvh --info=progress2"
+alias pwf="realpath"
+alias t="todo.sh"
 alias trash-ls="trash-list"
+
+# slightly safer rm, prompt for recursive or >3 files
+alias rm="rm -I"
+
+# move, but don't move into a directory
+# I chose `yes n | mv -i` rather than `mv --no-clobber`, because this one prints something to tell the user it failed
+alias mvd="yes n | mv -i --no-target-directory"
+
+# rsync with the options I use a lot: recursive, verbose, human-readable, and with progress percentage
+alias prsync="rsync -rvh --info=progress2"
+
+# switch two files with each other
+alias swap='mv --exchange'
 
 #-------------------------------------------------------------------------------
 # useful function definitions
@@ -32,20 +42,6 @@ mkcd () {
   fi
 
  mkdir -p -- "$1" && cd -P -- "$1"
-}
-
-# swap two files, renaming one to the other
-swap() {
-  if (( $# != 2 )); then
-    >&2 echo "Usage: swap FILE1 FILE2"
-    >&2 echo "  example: swap a.txt b.txt'"
-    return 1
-  fi
-
-  tmp=`mktemp`
-  mv $1 $tmp
-  mv $2 $1
-  mv $tmp $2
 }
 
 # repeat a command N times
@@ -96,6 +92,7 @@ bak() {
   cp -r "$1" "$1.bak"
 }
 
+# convert everything in the current directory from one ext to another
 convertall() {
   if (( $# != 2 )); then
     >&2 echo "Usage: convertall FROM_EXT TO_EXT"
