@@ -28,6 +28,10 @@ Plug 'tpope/vim-surround'  " work with parentheses and other 'surroundings'
 " preview search+replace (and some other stuff too apparently)
 Plug 'markonm/traces.vim'
 
+" colorschemes
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'haishanh/night-owl.vim'
+
 call plug#end()
 
 " }}}
@@ -88,6 +92,9 @@ set foldlevelstart=99
 " }}}
 
 " COLORSCHEME {{{
+
+set background=dark
+colorscheme PaperColor
 
 " disable background erase to avoid stupid color mismatch (default is y)
 set t_ut=
