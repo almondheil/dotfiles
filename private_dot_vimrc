@@ -28,9 +28,6 @@ Plug 'tpope/vim-surround'  " work with parentheses and other 'surroundings'
 " preview search+replace (and some other stuff too apparently)
 Plug 'markonm/traces.vim'
 
-" colorschemes
-Plug 'chriskempson/base16-vim'
-
 call plug#end()
 
 " }}}
@@ -91,19 +88,6 @@ set foldlevelstart=99
 " }}}
 
 " COLORSCHEME {{{
-
-" enable gruvbox colorscheme
-if exists('$BASE16_THEME')
-      \ && (!exists('g:colors_name') || g:colors_name != 'base16-$BASE16_THEME')
-    let base16colorspace=256
-    colorscheme base16-$BASE16_THEME
-endif
-
-" apply tweaks whenever colorscheme changes
-augroup on_change_colorschema
-  autocmd!
-  autocmd ColorScheme * call s:base16_customize()
-augroup END
 
 " disable background erase to avoid stupid color mismatch (default is y)
 set t_ut=
