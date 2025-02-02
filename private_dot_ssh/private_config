@@ -16,8 +16,9 @@ Host truenas
 # Grinnell MathLAN
 #
 
-# Match all cs.grinnell.edu hosts, except for the ssh gateway. This causes a loop on my laptop (2024-07-14)
-Host *.cs.grinnell.edu !ssh.cs.grinnell.edu
+# Match all cs.grinnell.edu hosts, except for ssh gateway and gitea instance
+# (ssh gateway will cause a loop, gitea just isn't possible to ssh into)
+Host *.cs.grinnell.edu !ssh.cs.grinnell.edu !git.cs.grinnell.edu
   User heilalmond
   ProxyJump mathlan-gateway
   StrictHostKeyChecking no
