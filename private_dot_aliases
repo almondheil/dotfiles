@@ -11,6 +11,8 @@ alias lt="ls -lht"         # Most recent first
 
 # just shortenings and renamings
 alias cm="chezmoi"
+alias cm_modify_manager="chezmoi_modify_manager"
+alias g="git"
 alias note="gonote"
 alias pwf="realpath"
 alias t="todo.sh"
