@@ -22,14 +22,11 @@
 [core]
   editor = vim
 [alias]
-  # log
-  l = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s' --abbrev-commit
-  # log authors
-  la = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit
-  # log authors date
-  lad = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit
-  # diff staged
-  ds = diff --staged
+  d = diff
+  lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit
+  lga = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --all
+  sd = diff --staged
+  st = status
 [pull]
   rebase = false
 {{- if eq .system "mathlan" }}
