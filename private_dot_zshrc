@@ -107,3 +107,6 @@ unalias l
 
 # Do not cd into a directory by name
 unsetopt autocd
+
+# do not prompt for confirmation on `rm *` -- I prefer an rm alias based on number of files.
+setopt rmstarsilent
