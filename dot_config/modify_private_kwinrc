@@ -2,4 +2,6 @@
 
 source auto
 
-ignore "Activities" "LastVirtualDesktop"
+# this ignores everything under the header [Activities][LastVirtualDesktop],
+# but is also very hacky because it's a compound header sort of
+ignore section "Activities][LastVirtualDesktop"
