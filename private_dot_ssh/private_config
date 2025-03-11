@@ -6,11 +6,21 @@ Host *
 # Home Network
 #
 
-# TrueNAS (on home network)
+# TrueNAS
 Host truenas
+  # first IP is on home network, other should work from school
   # HostName 192.168.50.67
   HostName 73.98.89.95
   Port 27182
+
+#
+# Reclaim Cloud
+#
+
+Host reclaim-cloud
+  User 1568
+  Hostname gate.my.reclaim.cloud
+  Port 3022
 
 #
 # Grinnell MathLAN
