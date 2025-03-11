@@ -3,3 +3,4 @@
 source auto
 
 ignore regex ".*" ".*Size"
+ignore "MainWindow" "ToolBarsMovable"
