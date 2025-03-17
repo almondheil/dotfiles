@@ -27,6 +27,8 @@
   lga = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --all
   sd = diff --staged
   st = status
+  # custom script that does `git diff HASH~ HASH`, or `git diff HEAD~ HEAD` if you give no args
+  cc = commit-changes
 [pull]
   rebase = false
 {{- if eq .system "mathlan" }}

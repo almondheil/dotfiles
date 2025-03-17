@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if (( $# != 1 )); then
+	hash="HEAD"
+else
+	hash=$1
+fi
+
+git diff ${hash}~ $hash
