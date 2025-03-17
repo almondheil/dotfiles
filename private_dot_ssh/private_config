@@ -14,8 +14,12 @@ Host truenas
   Port 27182
 
 #
-# Reclaim Cloud
+# Reclaim Hosting (through Grinnell)
 #
+
+Host reclaim-site
+  User heilalmond
+  Hostname heilalmond.sites.grinnell.edu
 
 Host reclaim-cloud
   User 1568
