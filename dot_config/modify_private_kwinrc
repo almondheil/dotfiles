@@ -1,7 +1,3 @@
 #!/usr/bin/env chezmoi_modify_manager
 
 source auto
-
-# this ignores everything under the header [Activities][LastVirtualDesktop],
-# but is also very hacky because it's a compound header sort of
-ignore section "Activities][LastVirtualDesktop"
