@@ -1,4 +1,4 @@
-{{- if eq .system "laptop" }}
+{{- if eq .system "laptop" -}}
 [Added Associations]
 application/pdf=okularApplication_pdf.desktop;org.mozilla.firefox.desktop;google-chrome.desktop;org.gimp.GIMP.desktop;libreoffice-draw.desktop;org.inkscape.Inkscape.desktop;com.github.jeromerobert.pdfarranger.desktop;
 application/zip=org.gnome.Nautilus.desktop;
@@ -31,11 +31,12 @@ text/plain=vim.desktop;
 video/mp4=vlc.desktop;
 video/x-matroska=vlc.desktop;
 x-scheme-handler/etcher=balenaEtcher.desktop
-x-scheme-handler/http=org.mozilla.firefox.desktop;google-chrome.desktop;
-x-scheme-handler/https=org.mozilla.firefox.desktop;google-chrome.desktop;
+x-scheme-handler/http=io.github.ungoogled_software.ungoogled_chromium.desktop;xfce4-web-browser.desktop;
+x-scheme-handler/https=io.github.ungoogled_software.ungoogled_chromium.desktop;xfce4-web-browser.desktop;
+x-scheme-handler/mailto=org.mozilla.Thunderbird.desktop;xfce4-mail-reader.desktop;
+x-scheme-handler/slack=slack.desktop;
 x-scheme-handler/sms=org.gnome.Shell.Extensions.GSConnect.desktop;
 x-scheme-handler/tel=org.gnome.Shell.Extensions.GSConnect.desktop;
-x-scheme-handler/slack=slack.desktop;
 
 [Default Applications]
 application/pdf=okularApplication_pdf.desktop;
@@ -70,13 +71,13 @@ text/markdown=com.github.marktext.marktext.desktop
 text/plain=vim.desktop
 video/mp4=vlc.desktop
 video/x-matroska=vlc.desktop
-x-scheme-handler/airtame=airtame-application.desktop
-x-scheme-handler/etcher=balenaEtcher.desktop
-x-scheme-handler/http=org.mozilla.firefox.desktop;
-x-scheme-handler/https=org.mozilla.firefox.desktop;
 x-scheme-handler/airtame=airtame-application.desktop;
+x-scheme-handler/etcher=balenaEtcher.desktop
+x-scheme-handler/http=io.github.ungoogled_software.ungoogled_chromium.desktop;
+x-scheme-handler/https=io.github.ungoogled_software.ungoogled_chromium.desktop;
+x-scheme-handler/mailto=org.mozilla.Thunderbird.desktop;
 x-scheme-handler/slack=slack.desktop;
-{{- else if eq .system "mathlan" }}
+{{- else if eq .system "mathlan" -}}
 [Added Associations]
 application/pdf=okularApplication_pdf.desktop;org.mozilla.firefox.desktop;google-chrome.desktop;org.gimp.GIMP.desktop;libreoffice-draw.desktop;org.inkscape.Inkscape.desktop;com.github.jeromerobert.pdfarranger.desktop;
 application/zip=org.gnome.Nautilus.desktop;
