@@ -102,8 +102,9 @@ if (has("termguicolors"))
 endif
 
 " enable the theme, and its lightline theme
-colorscheme night-owl
-let g:lightline = { 'colorscheme': 'nightowl' }
+colorscheme PaperColor
+set bg=dark
+let g:lightline = { 'colorscheme': 'PaperColor' }
 
 " disable background erase to avoid stupid color mismatch (default is y)
 set t_ut=
