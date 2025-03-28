@@ -1,0 +1,20 @@
+# brightness coarse and fine control
+bindsym --locked XF86MonBrightnessUp   exec brightnessctl s +5%
+bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
+# brightness fine control
+bindsym --locked Shift+XF86MonBrightnessUp   exec brightnessctl s +1%
+bindsym --locked Shift+XF86MonBrightnessDown exec brightnessctl s 1%-
+
+# volume
+bindsym --locked XF86AudioMute        exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+# volume fine control
+bindsym --locked Shift+XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1%
+bindsym --locked Shift+XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1%
+
+
+# play/pause controls
+bindsym --locked XF86AudioPrev exec playerctl previous
+bindsym --locked XF86AudioPlay exec playerctl play-pause
+bindsym --locked XF86AudioNext exec playerctl next
