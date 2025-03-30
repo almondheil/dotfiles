@@ -80,6 +80,10 @@
 	"on-click": "nm-connection-editor",
     },
     "pulseaudio": {
+	"states": {
+		"full": 999, // 999 to 100 counts as full. jank
+		"default": 99,
+	},
         "format": " \n{volume:02}{format_source}",
         "format-bluetooth": "\n{volume:02}{format_source}",
         "format-muted": "{format_source}",

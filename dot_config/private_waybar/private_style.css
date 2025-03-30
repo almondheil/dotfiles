@@ -72,7 +72,8 @@ window#waybar {
 /* the jankiest hack.
  * 100 is one char wider than 99, but it turns out that if I remove the
  * side padding it'll still make it the same width still */
-#backlight.full {
+#backlight.full,
+#pulseaudio.full {
     padding: 5px 0;
 }
 
