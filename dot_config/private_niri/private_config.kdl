@@ -255,15 +255,12 @@ layout {
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
-// prefer-no-csd
+prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
 // The path is formatted with strftime(3) to give you the screenshot date and time.
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
-
-// You can also set this to null to disable saving screenshots to disk.
-// screenshot-path null
+screenshot-path "~/sync/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png"  // loose imitation of ISO 8601
 
 // Animation settings.
 // The wiki explains how to configure individual animations:
@@ -339,6 +336,8 @@ binds {
     Mod+D { spawn "fuzzel"; }
     // Browser
     Mod+B { spawn "io.github.ungoogled_software.ungoogled_chromium"; }
+    // File browser
+    Mod+E { spawn "thunar"; }
     // Clipboard selector
     Mod+V { spawn "clipman" "pick" "--tool" "CUSTOM" "--tool-args" "fuzzel --dmenu"; }
     // Screen lock
@@ -547,8 +546,8 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    // Mod+V       { toggle-window-floating; }
-    // Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    Mod+Space       { toggle-window-floating; }
+    Mod+Shift+Space { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
@@ -564,8 +563,8 @@ binds {
     // Mod+Shift+Space { switch-layout "prev"; }
 
     Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    Shift+Print { screenshot-screen; }
+    Ctrl+Print { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
@@ -591,3 +590,4 @@ binds {
 environment {
     DISPLAY ":0"
 }
+
