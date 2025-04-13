@@ -51,6 +51,9 @@ export OCAMLPATH="$HOME/.opam/default/lib"
 export GOPATH="$HOME/.go"
 export PATH="$GOPATH/bin:$PATH"
 
+# nvm - node version manager
+source /usr/share/nvm/init-nvm.sh
+
 #-------------------------------------------------------------------------------
 # Setting important variables
 #-------------------------------------------------------------------------------
