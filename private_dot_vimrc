@@ -56,6 +56,9 @@ set smartindent
 " let ocp-indent package work in vim
 set rtp^="/home/almond/.opam/default/share/ocp-indent/vim"
 
+" don't try to fix files that don't have \n at the end
+set nofixeol
+
 " }}}
 
 " SEARCHING {{{
