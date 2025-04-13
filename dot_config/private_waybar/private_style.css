@@ -12,17 +12,7 @@
 }
 
 window#waybar {
-    background-color: transparent;
-}
-
-/* make the left and right groups actually share a background. */
-.modules-right,
-.modules-left {
     background-color: #181818;
-    border-radius: 5px;
-    border: 2px solid #777777;
-    margin: 5px;
-    padding: 5px;
 }
 
 /* style workspaces to set colors based on focus */
@@ -41,6 +31,7 @@ window#waybar {
 /* individual children within the left and right groups
  * TODO: if I can make this "all left and right children" via css selectors, thatd be good */
 #clock,
+#date,
 #battery,
 #cpu,
 #memory,
@@ -57,9 +48,15 @@ window#waybar {
 {
     border-radius: 5px;
     color: #ffffff;
-    padding: 0;
     padding: 5px;
-    margin: 0;
+    margin: 5px;
+}
+
+#clock.time {
+    color: #B3F361;
+}
+#clock.date {
+    color: #FFEA16;
 }
 
 @keyframes blink {

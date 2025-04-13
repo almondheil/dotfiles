@@ -3,7 +3,7 @@
     "layer": "top", // Put bar on layer above any windows
     "position": "right", // Waybar position (top|bottom|left|right)
     // Choose the order of the modules
-    "modules-left": ["clock", "niri/workspaces"],
+    "modules-left": ["clock#time", "clock#date", "niri/workspaces"],
     "modules-center": [],
     "modules-right": ["idle_inhibitor", "pulseaudio", "backlight", "battery", "tray"],
 
@@ -27,9 +27,13 @@
         // "icon-size": 21,
         "spacing": 10,
     },
-    "clock": {
+    "clock#time": {
         "format": "\n{:%H\n%M}",
-        "format-alt": "\n{:%m\n%d}",
+	"tooltip-format": "{:%H:%M}",
+	"justify": "center",
+    },
+    "clock#date": {
+	"format": "\n{:%m\n%d}",
 	"tooltip-format": "<tt>{calendar}</tt>",
 	"calendar": {
 		"mode"          : "year",
@@ -58,17 +62,16 @@
         "states": {
 	    "full": 100,
             "good": 80,
-            "warning": 30,
-            "critical": 15
+            "warning": 25,
+            "critical": 10
         },
         "format": "{icon}\n{capacity:02}",
         "format-charging": "\n{capacity:02}",
         "format-plugged": "\n{capacity:02}",
-	"format-full": "",
-	"format-plugged-full": "",
+        "format-full": "",
 	"format-icons": [" ", " ", " ", " ", " "], // appear to take up 2 spots, so add a space
-	"full-at": 80, // make waybar match with boot settings to not go above 80%
 	"justify": "center",
+	"full-at": 80, // wtf does this work? or is it just shit
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
