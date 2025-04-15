@@ -61,17 +61,16 @@
     "battery": {
         "states": {
 	    "full": 100,
-            "good": 80,
             "warning": 25,
             "critical": 10
         },
         "format": "{icon}\n{capacity:02}",
         "format-charging": "\n{capacity:02}",
         "format-plugged": "\n{capacity:02}",
-        "format-full": "",
+	// note: do not define format-full, it seems to interact badly with full-at
 	"format-icons": [" ", " ", " ", " ", " "], // appear to take up 2 spots, so add a space
 	"justify": "center",
-	"full-at": 80, // wtf does this work? or is it just shit
+	"full-at": 80,
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
