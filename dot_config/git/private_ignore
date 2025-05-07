@@ -3,3 +3,6 @@ tags
 
 # vim swapfiles, for when a file is open
 *.swp
+
+# any file I manually name `.ignore`
+*.ignore
