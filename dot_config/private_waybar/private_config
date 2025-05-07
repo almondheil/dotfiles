@@ -3,7 +3,7 @@
     "layer": "top", // Put bar on layer above any windows
     "position": "right", // Waybar position (top|bottom|left|right)
     // Choose the order of the modules
-    "modules-left": ["clock#time", "clock#date", "niri/workspaces"],
+    "modules-left": ["clock#date", "clock#time", "niri/workspaces"],
     "modules-center": [],
     "modules-right": ["idle_inhibitor", "pulseaudio", "backlight", "battery", "tray"],
 
@@ -28,7 +28,7 @@
         "spacing": 10,
     },
     "clock#time": {
-        "format": "\n{:%H\n%M}",
+        "format": "\n<b>{:%H\n%M}</b>",
 	"tooltip-format": "{:%H:%M}",
 	"justify": "center",
     },

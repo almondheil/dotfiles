@@ -12,7 +12,7 @@
 }
 
 window#waybar {
-    background-color: #181818;
+    background-color: #0D0F31;
 }
 
 /* style workspaces to set colors based on focus */
@@ -52,13 +52,6 @@ window#waybar {
     margin: 5px;
 }
 
-#clock.time {
-    color: #B3F361;
-}
-#clock.date {
-    color: #FFEA16;
-}
-
 @keyframes blink {
     to {
         background-color: #ffffff;
@@ -72,6 +65,10 @@ window#waybar {
 #backlight.full,
 #pulseaudio.full {
     padding: 5px 0;
+}
+
+#clock.time {
+    color: #B3F361;
 }
 
 #battery.critical:not(.charging) {
