@@ -36,11 +36,13 @@ Host *.cs.grinnell.edu !ssh.cs.grinnell.edu !git.cs.grinnell.edu
   User heilalmond
   ProxyJump mathlan-gateway
   StrictHostKeyChecking no
+  IdentityFile ~/.ssh/id_ed25519
 
 # The SSH gateway
 Host mathlan-gateway
   HostName ssh.cs.grinnell.edu
   User heilalmond
+  IdentityFile ~/.ssh/id_ed25519
   
   # Enable shared connection through a socket in my home directory
   ServerAliveInterval 300
