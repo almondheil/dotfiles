@@ -38,46 +38,39 @@ alias feh='feh -B black'
 # useful function definitions
 #-------------------------------------------------------------------------------
 
-# print to stderr
 error() {
-  echo $@ >&2
+  >&2 echo "$1"
 }
 
 # cd into new dir
-mkcd () {
+mkcd() {
   if (( $# != 1 )); then
-    >&2 echo "Usage: mkcd DIR"
-    >&2 echo "  example: mkcd testing"
+    error "Usage: mkcd DIR"
+    error "  example: mkcd testing"
     return 1
   fi
 
- mkdir -p -- "$1" && cd -P -- "$1"
+  mkdir -p -- "$1" && cd -P -- "$1"
 }
 
 # repeat a command N times
-function repeat() {
+loop() {
   if (( $# < 2 )); then
-    >&2 echo "Usage: repeat N CMD"
-    >&2 echo "  example: repeat 10 ./stress_test -n 20"
+    error "Usage: loop N CMD"
+    error "  example: loop 10 ./stress_test -n 20"
     return 1
   fi
 
-  number = $1
+  number=$1
   shift
-  for n in $(seq $number); do
-    $@
+  for _ in $(seq "$number"); do
+    "$@"
   done
 }
 
 # fuzzy open file
 # tweaked from https://github.com/junegunn/fzf/wiki/examples#opening-files
 fo() {
-  if (( $# != 1 )); then
-    >&2 echo "Usage: fo FZF"
-    >&2 echo "  example: fo 'taxes pdf'"
-    return 1
-  fi
-
   # fzf over non-hidden files in home dir
   IFS=$'\n' out=("$(find ~/* -not -path '*/.*' | fzf --query="$1" --exit-0 --expect=ctrl-e,ctrl-o)")
   key=$(head -1 <<< "$out")
@@ -92,8 +85,8 @@ fo() {
 # make a backup copy of a file
 bak() {
   if (( $# != 1 )); then
-    >&2 echo "Usage: bak FILE"
-    >&2 echo "  example: bak file.txt"
+    error "Usage: bak FILE"
+    error "  example: bak file.txt"
     return 1
   fi
 
@@ -105,8 +98,8 @@ bak() {
 # convert everything in the current directory from one ext to another
 convertall() {
   if (( $# != 2 )); then
-    >&2 echo "Usage: convertall FROM_EXT TO_EXT"
-    >&2 echo "  example: convertall webp jpg"
+    error "Usage: convertall FROM_EXT TO_EXT"
+    error "  example: convertall webp jpg"
     return 1
   fi
 
@@ -123,8 +116,8 @@ convertall() {
 # wait for a PID to exit
 await() {
   if (( $# != 1 )); then
-    >&2 echo "Usage: await PID"
-    >&2 echo "  example: await 17028; reboot"
+    error "Usage: await PID"
+    error "  example: await 17028; reboot"
     return 1
   fi
 
