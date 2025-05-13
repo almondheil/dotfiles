@@ -38,6 +38,11 @@ alias feh='feh -B black'
 # useful function definitions
 #-------------------------------------------------------------------------------
 
+# print to stderr
+error() {
+  echo $@ >&2
+}
+
 # cd into new dir
 mkcd () {
   if (( $# != 1 )); then
@@ -113,4 +118,16 @@ convertall() {
     newname="${name%.$from}.$to"
     magick "$name" "$newname" && rm "$name"
   done
+}
+
+# wait for a PID to exit
+await() {
+  if (( $# != 1 )); then
+    >&2 echo "Usage: await PID"
+    >&2 echo "  example: await 17028; reboot"
+    return 1
+  fi
+
+  pid=$1
+  tail --pid=$pid -f /dev/null
 }
