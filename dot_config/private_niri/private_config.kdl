@@ -60,6 +60,15 @@ input {
     // focus-follows-mouse max-scroll-amount="0%"
 }
 
+// Gesture configuration.
+// Wiki page: https://github.com/YaLTeR/niri/wiki/Configuration:-Gestures
+gestures {
+    // Hot corners are enabled by default, disable them
+    hot-corners {
+        off
+    }
+}
+
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
 // The built-in laptop monitor is usually called "eDP-1".
