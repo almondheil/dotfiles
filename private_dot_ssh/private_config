@@ -1,6 +1,7 @@
-# All hosts should forward the key if needed
+# Defaults for all hosts
 Host *
-  ForwardAgent yes
+  ForwardAgent yes  # Forward ssh keys (in case of further connection)
+  IdentityFile ~/.ssh/id_ed25519  # Use default key
 
 #
 # Home Network
@@ -9,42 +10,33 @@ Host *
 # TrueNAS
 Host truenas
   # first IP is on home network, other should work from school
-  # HostName 192.168.50.67
-  HostName 73.98.89.95
+  # Hostname 192.168.50.67
+  Hostname 73.98.89.95
   Port 27182
 
 #
-# Reclaim Hosting (through Grinnell)
+# USRC
 #
 
-Host reclaim-site
-  User heilalmond
-  Hostname heilalmond.sites.grinnell.edu
+Host usrc-new
+  Hostname usrc-new.newmexicoconsortium.org
+  User aheil
+  IdentityFile ~/.ssh/id_usrc
 
-Host reclaim-cloud
-  User 1568
-  Hostname gate.my.reclaim.cloud
-  Port 3022
-
-#
-# Grinnell MathLAN
-#
-
-# Match all cs.grinnell.edu hosts, except for ssh gateway and gitea instance
-# (ssh gateway will cause a loop, gitea just isn't possible to ssh into)
-Host *.cs.grinnell.edu !ssh.cs.grinnell.edu !git.cs.grinnell.edu
-  User heilalmond
-  ProxyJump mathlan-gateway
-  StrictHostKeyChecking no
-  IdentityFile ~/.ssh/id_ed25519
-
-# The SSH gateway
-Host mathlan-gateway
-  HostName ssh.cs.grinnell.edu
-  User heilalmond
-  IdentityFile ~/.ssh/id_ed25519
-  
   # Enable shared connection through a socket in my home directory
   ServerAliveInterval 300
   ControlMaster auto
   ControlPath ~/.ssh/sockets/ssh_mux_%h_%p_%r
+
+Host usrc-cm
+  Hostname cm.si.usrc
+  User aheil
+  IdentityFile ~/.ssh/id_usrc
+  ProxyJump usrc-new
+
+# # TODO: WHAT IS THE HOSTNAME?
+# Host usrc-dist
+#   Hostname ???
+#   User aheil
+#   IdentityFile ~/.ssh/id_usrc
+#   ProxyJump usrc-new
