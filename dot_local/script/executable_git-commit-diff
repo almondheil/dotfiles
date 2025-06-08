@@ -1,9 +1,37 @@
-#!/bin/bash
+#!/usr/bin/env python3
 
-if (( $# != 1 )); then
-	hash="HEAD"
-else
-	hash=$1
-fi
+import sys
+import subprocess
 
-git diff ${hash}~ $hash
+def eprint(*args, **kwargs):
+    print(*args, **kwargs, file=sys.stderr)
+
+# go through sys.argv, categorizing into flags and not.
+# ignore the first argument, this is the script name
+flags = []
+non_flags = []
+for arg in sys.argv[1:]:
+    if arg.startswith('-'):
+        flags.append(arg)
+    else:
+        non_flags.append(arg)
+
+# Decide what commit hash will be used.
+# You can specify one, or just let it default to HEAD
+l = len(non_flags)
+if l == 0:
+    commit_hash = 'HEAD'
+elif l == 1:
+    commit_hash = non_flags[0]
+else:
+    eprint('Too many arguments, expected commit HASH or none')
+    exit(1)
+
+# construct the command
+# result: `git diff HASH~ HASH --flag --flag --flag
+command = ['git', 'diff', commit_hash + '~', commit_hash]
+command.extend(flags)
+
+# run the actual command and return whatever code it did.
+proc = subprocess.run(command)
+exit(proc.returncode)
