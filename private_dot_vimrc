@@ -35,6 +35,9 @@ Plug 'itchyny/lightline.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'haishanh/night-owl.vim'
 
+" limit what modelines are allowed to do
+Plug 'ciaranm/securemodelines'
+
 call plug#end()
 
 " }}}
