@@ -339,6 +339,10 @@ binds {
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
 
+    // Mod-A to show the overview, or do a
+    // 4-finger upward swipe on the touchpad.
+    Mod+A { toggle-overview; }
+
     // Terminal
     Mod+T { spawn "kitty"; }
     // App launcher
