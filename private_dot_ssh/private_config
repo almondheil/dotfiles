@@ -1,7 +1,6 @@
 # Set defaults: forward ssh agent, use default key
-Host *
-  ForwardAgent yes
-  IdentityFile ~/.ssh/id_ed25519
+ForwardAgent yes
+IdentityFile ~/.ssh/id_ed25519
 
-# Include purpose-specific groups
-Include groups/*
+# Include configs from subdir
+Include config.d/*
