@@ -373,7 +373,7 @@ binds {
     // Clipboard selector
     Mod+V { spawn "clipman" "pick" "--tool" "CUSTOM" "--tool-args" "fuzzel --dmenu"; }
     // Screen lock
-    Mod+Alt+L { spawn "swaylock" "-f" "-c" "282828"; }
+    Mod+Alt+L { spawn "swaylock" "-f" "-c" "60A1C7"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.

@@ -7,7 +7,7 @@ Requisite=graphical-session.target
 [Service]
 ExecStart=/usr/bin/swayidle -w \
 	timeout 245 'notify-send -u critical -t 15000 "screen is gonna lock in like 15 seconds"' \
-	timeout 300 'swaylock -f -c 282828 --indicator-idle-visible' \
+	timeout 300 'swaylock -f -c 60A1C7 --indicator-idle-visible' \
 	timeout 600 'niri msg output eDP-1 off' resume 'niri msg output eDP-1 on' \
-	before-sleep 'swaylock -f -c 282828'
+	before-sleep 'swaylock -f -c 60A1C7'
 Restart=on-failure
