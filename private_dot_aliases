@@ -17,6 +17,7 @@ alias note="gonote"
 alias pwf="realpath"
 alias t="todo.sh"
 alias trash-ls="trash-list"
+alias open="xdg-open"
 
 # slightly safer rm, prompt for recursive or >3 files
 alias rm="rm -I"
