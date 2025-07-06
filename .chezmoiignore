@@ -1,18 +1,4 @@
 README.md
-
-# age encrypted key
-key.txt.age
-
-# config files that are places by run_once scripts
-one_time_configs
-
-# chezmoi_modify_manager ini files (https://vorpalblade.github.io/chezmoi_modify_manager/installation.html)
 **/*.src.ini
-
-# only manage these private files on my laptop
-{{ if ne .system "laptop" }}
-.airvpn
 .ssh/*
 *.age
-.config/qBittorrent/*
-{{ end }}
