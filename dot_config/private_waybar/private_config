@@ -68,7 +68,7 @@
         "format-charging": "\n{capacity:02}",
         "format-plugged": "\n{capacity:02}",
 	// note: do not define format-full, it seems to interact badly with full-at
-	"format-icons": [" ", " ", " ", " ", " "], // appear to take up 2 spots, so add a space
+	"format-icons": ["", "", "", "", ""],
 	"justify": "center",
 	"full-at": 80,
     },
