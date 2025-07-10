@@ -4,7 +4,7 @@
 
     /* this will use inconsolata for text, but will fallback to
      * ttf-font-awesome for icons (which is desirable) */
-    font-family: "Inconsolata", ttf-font-awesome;
+    font-family: "Atkinson Hyperlegible Mono", ttf-font-awesome;
 
     /* adjust font-size value to your liking: */
     font-size: 12px;
