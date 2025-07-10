@@ -1,0 +1,58 @@
+# do not load bashrc if non-interactive shell
+# (leave this at the top)
+[[ $- != *i* ]] && return
+
+# load aliases
+if [ -f "$HOME/.aliases" ]; then
+  source "$HOME/.aliases"
+fi
+
+# load git prompt script
+# (https://raw.githubusercontent.com/git/git/refs/heads/master/contrib/completion/git-prompt.sh)
+if [ -f "$HOME/.git-prompt.sh" ]; then
+  source "$HOME/.git-prompt.sh"
+fi
+
+# add to $PATH
+# (using a slightly different command to make it easier to read)
+path_add() {
+  export PATH="$PATH:$1"
+}
+path_add "$HOME/.cargo/bin"
+path_add "$HOME/.go/bin"
+path_add "$HOME/.local/bin"
+path_add "$HOME/.local/script"
+unset -f path_add
+
+# programming env setups
+## cargo/rust
+if [ -f "$HOME/.cargo/env" ]; then
+  source "$HOME/.cargo/env"
+fi
+## go
+export GOPATH="$HOME/.go"
+## ruby
+export GEM_HOME="$HOME/.gems"
+
+# file mask (block all group and other perms)
+umask 077
+
+# use vim! everywhere!
+export EDITOR=vim
+
+# if there's <1 screen of content, make less do nothing
+export LESS="--no-init --quit-if-one-screen -R"
+
+# setup __git_ps1 options
+# (https://mjswensen.com/blog/git-status-prompt-options/)
+export GIT_PS1_SHOWDIRTYSTATE=true # + for staged, * for unstaged
+export GIT_PS1_SHOWUNTRACKEDFILES=true # % for untracked
+export GIT_PS1_SHOWSTASHSTATE=true # $ for stashed changes
+
+# set prompt
+## git (branch)
+export PROMPT_COMMAND='PS1_CMD1=$(__git_ps1)'
+## change ~/long/path/to/faraway/dir -> ~/.../faraway/dir, etc
+export PROMPT_DIRTRIM=2
+## two-line PS1 with lines (host, pwd, git), (time, $)
+export PS1='[\[\e[96m\]\u@\h\[\e[0m\]] \[\e[92m\]\w\[\e[0m\]\[\e[95m\]${PS1_CMD1}\n\[\e[0m\](\t) \\$ '
