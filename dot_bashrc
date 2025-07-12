@@ -37,8 +37,8 @@ export GEM_HOME="$HOME/.gems"
 # file mask. 777 - 022 = 755, so rwxr-xr-x is the max perms
 umask 022
 
-# use vim! everywhere!
-export EDITOR=vim
+# neovim as editor
+export EDITOR=nvim
 
 # if there's <1 screen of content, make less do nothing
 export LESS="--no-init --quit-if-one-screen -R"
