@@ -34,8 +34,8 @@ export GOPATH="$HOME/.go"
 ## ruby
 export GEM_HOME="$HOME/.gems"
 
-# file mask (block all group and other perms)
-umask 077
+# file mask. 777 - 022 = 755, so rwxr-xr-x is the max perms
+umask 022
 
 # use vim! everywhere!
 export EDITOR=vim
