@@ -22,10 +22,6 @@ alias open="xdg-open"
 # slightly safer rm, prompt for recursive or >3 files
 alias rm="rm -I"
 
-# move, but don't move into a directory
-# I chose `yes n | mv -i` rather than `mv --no-clobber`, because this one prints something to tell the user it failed
-alias mvd="yes n | mv -i --no-target-directory"
-
 # rsync with the options I use a lot: recursive, verbose, human-readable, and with progress percentage
 alias prsync="rsync -rvh --info=progress2"
 
@@ -35,6 +31,10 @@ alias swap='mv --exchange'
 # run feh with a black background
 alias feh='feh -B black'
 
+# vimwiki with nvim
+alias wiki="nvim -c :VimwikiIndex"
+alias today="nvim -c :VimwikiMakeDiaryNote"
+
 #-------------------------------------------------------------------------------
 # useful function definitions
 #-------------------------------------------------------------------------------
@@ -43,22 +43,11 @@ error() {
   >&2 echo "$1"
 }
 
-# cd into new dir
-mkcd() {
-  if (( $# != 1 )); then
-    error "Usage: mkcd DIR"
-    error "  example: mkcd testing"
-    return 1
-  fi
-
-  mkdir -p -- "$1" && cd -P -- "$1"
-}
-
 # repeat a command N times
 loop() {
   if (( $# < 2 )); then
     error "Usage: loop N CMD"
-    error "  example: loop 10 ./stress_test -n 20"
+    error "  example: loop 10 ls"
     return 1
   fi
 
@@ -83,19 +72,6 @@ fo() {
   fi
 }
 
-# make a backup copy of a file
-bak() {
-  if (( $# != 1 )); then
-    error "Usage: bak FILE"
-    error "  example: bak file.txt"
-    return 1
-  fi
-
-  # if there's an existing backup, remove it
-  rm -rf "$1.bak"
-  cp -r "$1" "$1.bak"
-}
-
 # convert everything in the current directory from one ext to another
 convertall() {
   if (( $# != 2 )); then
@@ -112,16 +88,4 @@ convertall() {
     newname="${name%.$from}.$to"
     magick "$name" "$newname" && rm "$name"
   done
-}
-
-# wait for a PID to exit
-await() {
-  if (( $# != 1 )); then
-    error "Usage: await PID"
-    error "  example: await 17028; reboot"
-    return 1
-  fi
-
-  pid=$1
-  tail --pid=$pid -f /dev/null
 }
