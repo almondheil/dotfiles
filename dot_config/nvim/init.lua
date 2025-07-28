@@ -1,19 +1,20 @@
 --- general settings
-require('core.options')
---require('core.keymaps')
+require('almond.options')
+--require('almond.keymaps')
 
 --- lazy.nvim, snazzy plugin manager
-require('core.lazy')
+require('almond.lazy')
 
 --- load individual plugins. order matters
-require('core.treesitter')
-require('core.lsp')
-require('core.completion')
-require('core.explorer')
-require('core.telescope')
-require('core.whichkey')
-require('core.theme')
+require('almond.treesitter')
+require('almond.lsp')
+require('almond.completion')
+require('almond.explorer')
+require('almond.telescope')
+require('almond.whichkey')
+require('almond.vimwiki')
+require('almond.theme')
 
 -- visuals
-require('core.theme')
----require('core.statusline')
+require('almond.theme')
+---require('almond.statusline')
