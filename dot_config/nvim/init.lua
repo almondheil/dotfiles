@@ -1,5 +1,6 @@
---- general settings
+--- general settings that should be set before plugins load
 require('almond.basic')
+require('almond.vimwiki')
 --require('almond.keymaps')
 
 --- lazy.nvim, snazzy plugin manager
@@ -12,8 +13,7 @@ require('almond.completion')
 require('almond.explorer')
 require('almond.telescope')
 require('almond.whichkey')
-require('almond.vimwiki')
-require('almond.theme')
+require('almond.theme') -- theme should go last
 
 -- visuals
 require('almond.theme')
