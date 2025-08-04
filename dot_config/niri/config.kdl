@@ -23,8 +23,8 @@ input {
     touchpad {
         // off
         tap
-        dwt
-        // dwtp
+        dwt // disable while typing
+        // dwtp // disable while trackpointing
         // drag false
         // drag-lock
         natural-scroll
