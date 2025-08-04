@@ -1,5 +1,5 @@
 --- general settings
-require('almond.options')
+require('almond.basic')
 --require('almond.keymaps')
 
 --- lazy.nvim, snazzy plugin manager
