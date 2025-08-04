@@ -48,4 +48,6 @@ require('which-key').add({
   { "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", desc = "Format" },
   { "<leader>lh", "<cmd>lua vim.lsp.buf.hover()<cr>", desc = "Hover" },
   { "<leader>lR", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename" },
+  { "<leader>w", group = "Wiki" },
+  { "<leader>f", group = "Find" },
 })
