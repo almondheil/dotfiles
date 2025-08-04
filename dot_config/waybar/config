@@ -1,98 +1,90 @@
+{ "layer": "top",
+  "position": "right", 
+  "modules-left": ["clock#time", "niri/workspaces"],
+  "modules-center": [],
+  "modules-right": ["idle_inhibitor", "pulseaudio", "backlight", "battery", "tray"],
 
-{
-    "layer": "top", // Put bar on layer above any windows
-    "position": "right", // Waybar position (top|bottom|left|right)
-    // Choose the order of the modules
-    "modules-left": ["clock#date", "clock#time", "niri/workspaces"],
-    "modules-center": [],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "backlight", "battery", "tray"],
-
-    // Modules configuration
-    "niri/workspaces": {
-	"format": "{icon}",
-	"format-icons": {
-	    // By state
-	    "active": "●",
-	    "default": "•",
-	},
+  // Modules configuration
+  "niri/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      // By state
+      "active": "●",
+      "default": "•",
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        },
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": " ",
+      "deactivated": " "
     },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10,
+  },
+  "tray": {
+    // "icon-size": 21,
+    "spacing": 10,
+  },
+  "clock#time": {
+    "format": " \n<b>{:%H\n%M}</b>",
+    "justify": "center",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode"          : "year",
+      "mode-mon-col"  : 3,
+      "on-scroll"     : 1,
+      "on-click-right": "mode",
+      "format": {
+        "months":     "<span color='#ffead3'><b>{}</b></span>",
+        "days":       "<span color='#999999'>{}</span>",
+        "weeks":      "<span color='#99ffdd'>W{}</span>",
+        "weekdays":   "<span color='#ffcc66'>{}</span>",
+        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
     },
-    "clock#time": {
-        "format": "\n<b>{:%H\n%M}</b>",
-	"tooltip-format": "{:%H:%M}",
-	"justify": "center",
+  },
+  "backlight": {
+    "states": {
+      "full": 100,
+      "default": 0,
     },
-    "clock#date": {
-	"format": "\n{:%m\n%d}",
-	"tooltip-format": "<tt>{calendar}</tt>",
-	"calendar": {
-		"mode"          : "year",
-		"mode-mon-col"  : 3,
-		"on-scroll"     : 1,
-		"on-click-right": "mode",
-		"format": {
-			"months":     "<span color='#ffead3'><b>{}</b></span>",
-			"days":       "<span color='#999999'>{}</span>",
-			"weeks":      "<span color='#99ffdd'>W{}</span>",
-			"weekdays":   "<span color='#ffcc66'>{}</span>",
-			"today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-		}
-	},
-	"justify": "center",
+    "format": " \n{percent:02}",
+    "justify": "center",
+  },
+  "battery": {
+    "states": {
+      "full": 100,
+      "warning": 25,
+      "critical": 10
     },
-    "backlight": {
-	"states": {
-		"full": 100,
-		"default": 0,
-	},
-        "format": "\n{percent:02}",
-	"justify": "center",
+    "format": "{icon}\n{capacity:02}",
+    "format-charging": "\n{capacity:02}",
+    "format-plugged": "\n{capacity:02}",
+    // note: do not define format-full, it seems to interact badly with full-at
+    "format-icons": [" ", " ", " ", " ", " "], // appear to take up 2 spots, so add a space
+    "justify": "center",
+    "full-at": 80,
+  },
+  "network": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-wifi": "  {essid}",
+    "format-ethernet": "  {ifname}",
+    "format-linked": "  {ifname} (no-ip)",
+    "format-disconnected": "NO NETWORK",
+    "tooltip": false,
+    "on-click": "nm-connection-editor",
+  },
+  "pulseaudio": {
+    "states": {
+      "full": 999, // 999 to 100 counts as full. jank
+      "default": 99,
     },
-    "battery": {
-        "states": {
-	    "full": 100,
-            "warning": 25,
-            "critical": 10
-        },
-        "format": "{icon}\n{capacity:02}",
-        "format-charging": "\n{capacity:02}",
-        "format-plugged": "\n{capacity:02}",
-	// note: do not define format-full, it seems to interact badly with full-at
-	"format-icons": [" ", " ", " ", " ", " "], // appear to take up 2 spots, so add a space
-	"justify": "center",
-	"full-at": 80,
-    },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "  {essid}",
-        "format-ethernet": "  {ifname}",
-        "format-linked": "  {ifname} (no-ip)",
-        "format-disconnected": "NO NETWORK",
-	"tooltip": false,
-	"on-click": "nm-connection-editor",
-    },
-    "pulseaudio": {
-	"states": {
-		"full": 999, // 999 to 100 counts as full. jank
-		"default": 99,
-	},
-        "format": " \n{volume:02}{format_source}",
-        "format-bluetooth": "\n{volume:02}{format_source}",
-        "format-muted": "{format_source}",
-        "format-bluetooth-muted": "{format_source}",
-        "format-source": "\n\n{volume:02}",
-        "format-source-muted": "",
-        "on-click": "pavucontrol",
-	"justify": "center",
-    },
+    "format": " \n{volume:02}{format_source}",
+    "format-bluetooth": "\n{volume:02}{format_source}",
+    "format-muted": "0{format_source}",
+    "format-bluetooth-muted": "0{format_source}",
+    "format-source": "\n\n{volume:02}",
+    "format-source-muted": "",
+    "on-click": "pavucontrol",
+    "justify": "center",
+  },
 }
