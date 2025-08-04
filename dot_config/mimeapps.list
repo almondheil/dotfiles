@@ -22,9 +22,9 @@ audio/x-speex=vlc.desktop;
 audio/x-vorbis=vlc.desktop;
 audio/x-vorbis+ogg=vlc.desktop;
 audio/x-wav=vlc.desktop;
-image/gif=org.kde.gwenview.desktop;
-image/jpeg=org.kde.gwenview.desktop;
-image/png=org.kde.gwenview.desktop;
+image/gif=org.kde.gwenview.desktop;org.gimp.GIMP.desktop;
+image/jpeg=org.kde.gwenview.desktop;org.gimp.GIMP.desktop;
+image/png=org.kde.gwenview.desktop;org.gimp.GIMP.desktop;
 text/markdown=com.github.marktext.marktext.desktop;
 text/plain=vim.desktop;
 video/mp4=vlc.desktop;
@@ -36,7 +36,7 @@ x-scheme-handler/mailto=org.mozilla.Thunderbird.desktop;xfce4-mail-reader.deskto
 x-scheme-handler/slack=slack.desktop;
 x-scheme-handler/sms=org.gnome.Shell.Extensions.GSConnect.desktop;
 x-scheme-handler/tel=org.gnome.Shell.Extensions.GSConnect.desktop;
-image/heif=feh.desktop;org.kde.gwenview.desktop;
+image/heif=org.kde.gwenview.desktop;org.gimp.GIMP.desktop;
 
 [Default Applications]
 application/pdf=okularApplication_pdf.desktop;
