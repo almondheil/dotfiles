@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# big and small scale sizes
+DEFAULT=1.75
+MODIFIED=1.0
+
+# if this file exists, we are at $MODIFIED scale
+SCALE_MODIFIED_FILE="$HOME/.local/state/niri_scale_modified"
+
+if [ -f "$SCALE_MODIFIED_FILE" ]; then
+  # switch from $MODIFIED to $DEFAULT
+  rm -f "$SCALE_MODIFIED_FILE"
+  niri msg output eDP-1 scale $DEFAULT
+  echo "restored scale to $DEFAULT"
+else
+  # switch from $DEFAULT to $MODIFIED
+  touch "$SCALE_MODIFIED_FILE"
+  niri msg output eDP-1 scale $MODIFIED
+  echo "modified scale to $MODIFIED"
+fi
