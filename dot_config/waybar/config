@@ -83,16 +83,30 @@
   },
   "pulseaudio": {
     "states": {
-      "full": 999, // 999 to 100 counts as full. jank
-      "default": 99,
+      "overfull": 999, // 999 to 101 is state "overfull"
+      "full": 100,    // 100-100 "full"
+      "default": 99,  // 99 or below "default"
     },
-    "format": " \n{volume:02}{format_source}",
-    "format-bluetooth": "\n{volume:02}{format_source}",
-    "format-muted": "0{format_source}",
-    "format-bluetooth-muted": "0{format_source}",
-    "format-source": "\n\n{volume:02}",
-    "format-source-muted": "",
     "on-click": "pavucontrol",
     "justify": "center",
+
+    // default, non-bluetooth output formats. tuned to look OK with vertical bar.
+    // 
+    // muted: fa muted icon stopped working, switched to a different one.
+    // default: volume on newline
+    // full: FF
+    // past full (101% or more): F+
+    "format-muted": "0{format_source}",
+    "format": " \n{volume:02}{format_source}",
+    "format-full": " \nFF{format_source}",
+    "format-overfull": " \nF+{format_source}",
+
+    // bluetooth format, should probably have those same states but I haven't spent the time
+    "format-bluetooth": "\n{volume:02}{format_source}",
+    "format-bluetooth-muted": "0{format_source}",
+
+    // source format shows input with a mic icon, also has no fancy state handling
+    "format-source": "\n\n{volume:02}",
+    "format-source-muted": "",
   },
 }
