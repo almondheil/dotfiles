@@ -1,3 +1,5 @@
+# vim: ft=toml
+
 [user]
   email = {{ .git.email | quote }}
   name = almond Heil
@@ -27,7 +29,5 @@
   lga = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --all
   s = status
   sd = diff --staged
-  # custom script that does `git diff HASH~ HASH`, or `git diff HEAD~ HEAD` if you give no args
-  cd = commit-diff
 [pull]
   rebase = false
