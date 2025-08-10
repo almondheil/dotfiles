@@ -1,0 +1,20 @@
+# vim: ft=yaml
+
+---
+encryption: "age"
+age:
+  identity: "~/.config/chezmoi/key.txt"
+  recipient: "age1n6hzpdwerrsnu6wpqf2vmt04fn04tcq9dat9wnh2340h6dd3vqqsev0nue"
+
+# System-specific data
+data:
+  # what system is running? "laptop" enables special config, but blank is OK too
+  system: "laptop"
+
+  # settings for git
+  git:
+    email: "you@website.com"
+    gpg:
+      enabled: false
+      signing_key: "signing key 16ch"
+
