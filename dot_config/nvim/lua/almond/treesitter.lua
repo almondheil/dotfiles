@@ -7,11 +7,16 @@ require('nvim-treesitter.configs').setup {
     "markdown", "bash"
   },
   auto_install = true, -- Automatically install missing parsers
+
+  -- modules, all enabled by default
+  -- for each one, set `disable = { "array", "of", "langs" } to disable it for that lang
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
   },
-  indent = { enable = true },
+  indent = {
+    enable = true,
+  },
   incremental_selection = {
     enable = true,
     keymaps = {
@@ -19,5 +24,8 @@ require('nvim-treesitter.configs').setup {
       node_incremental = "<CR>",
       node_decremental = "<BS>",
     },
+  },
+  textobjects = {
+    enable = true,
   },
 }

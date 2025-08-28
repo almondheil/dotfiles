@@ -74,8 +74,16 @@ return require("lazy").setup({
 
   -- Theme (load last after all functionality is configured)
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000, -- Load last
+    "sainnhe/everforest",
+    lazy = false,
+    priority = 1000,
+
+    -- This config is short so we'll just do it here
+    config = function()
+      vim.opt.background = 'dark'
+      vim.g.everforest_background = 'hard'
+      vim.g.everforest_enable_italic = false
+      vim.cmd.colorscheme('everforest')
+    end
   },
 })
