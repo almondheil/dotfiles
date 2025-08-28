@@ -376,7 +376,7 @@ binds {
     // App launcher
     Mod+D { spawn "fuzzel"; }
     // Browser
-    Mod+B { spawn "io.github.ungoogled_software.ungoogled_chromium"; }
+    Mod+B { spawn "flatpak" "run" "org.mozilla.firefox"; }
     // File browser
     Mod+E { spawn "thunar"; }
     // Clipboard selector
