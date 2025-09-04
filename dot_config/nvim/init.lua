@@ -1,4 +1,5 @@
 -- before plugins load, set up vimwiki global vars
+require('almond.options')
 require('almond.vimwiki')
 
 --- lazy.nvim, snazzy plugin manager
