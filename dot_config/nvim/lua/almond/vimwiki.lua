@@ -1,10 +1,8 @@
-local vim_global = vim.g
-
 -- disable URL hiding
-vim_global.vimwiki_url_maxsave = 0
+vim.g.vimwiki_url_maxsave = 0
 
 -- when opening `dir/`, open/create `dir/main` instead
-vim_global.vimwiki_dir_link = 'main'
+vim.g.vimwiki_dir_link = 'main'
 
 -- one wiki definition. 
 -- see :h vimwiki_list for more
@@ -35,8 +33,19 @@ local wiki = {
 --   ...
 --   wiki_N,
 -- }
-vim_global.vimwiki_list = {
+vim.g.vimwiki_list = {
   wiki,
   notes,
 }
 
+-- creating new wiki file: call template script
+vim.api.nvim_create_autocmd({'BufNewFile'}, {
+  pattern = '*.wiki',
+  command = "0r! ~/.local/script/vimwiki-template.py '%'",
+})
+
+-- editing all wiki files: text width 100
+vim.api.nvim_create_autocmd({'BufEnter', 'BufWinEnter'}, {
+  pattern = '*.wiki',
+  command = 'setlocal textwidth=100',
+})
