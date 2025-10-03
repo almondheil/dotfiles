@@ -1,4 +1,4 @@
 note_dir: $HOME/sync/Notes
 extension: .md
-editor: vim
+editor: nvim
 list_threads: 4
