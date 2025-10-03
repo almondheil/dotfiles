@@ -10,11 +10,6 @@
   ui = auto
 [init]
   defaultBranch = main
-[filter "lfs"]
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
-  required = true
 {{- if .git.gpg.enabled }}
 [gpg]
   program = gpg
@@ -22,12 +17,16 @@
   gpgsign = true
 {{- end }}
 [core]
-  editor = vim
+  editor = nvim
 [alias]
-  d = diff
-  lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit
-  lga = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --all
-  s = status
+  br = branch
+  ci = commit --verbose
+  co = checkout
+  lg = log --oneline
   sd = diff --staged
+  st = status
+  tree = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit
 [pull]
-  rebase = false
+  ff = only
+[push]
+  autoSetupRemote = true
