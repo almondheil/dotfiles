@@ -1,4 +1,3 @@
--- before plugins load, set up vimwiki global vars
 require('almond.options')
 require('almond.vimwiki')
 
@@ -8,6 +7,7 @@ require('almond.lazy')
 --- load individual plugins config after load. order matters here
 require('almond.treesitter')
 require('almond.lsp')
+require('almond.markdown')
 require('almond.completion')
 require('almond.explorer')
 require('almond.telescope')

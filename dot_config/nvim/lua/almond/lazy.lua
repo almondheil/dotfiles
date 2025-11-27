@@ -67,7 +67,15 @@ return require("lazy").setup({
     dependencies = { "echasnovski/mini.nvim" },
   },
 
-  -- Wiki manager
+  -- Markdown editing
+  {
+    "Nedra1998/nvim-mdlink",
+  },
+  {
+    "Myzel394/easytables.nvim",
+  },
+
+  -- Vimwiki
   {
     "vimwiki/vimwiki",
   },
