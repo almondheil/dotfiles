@@ -1,2 +1,5 @@
 [Context]
-filesystems=/home/almond/sync/vimwiki:ro;/home/almond/sync/vimwiki_html:ro
+filesystems=/home/almond/sync/vimwiki:ro;/home/almond/.secrets:ro;
+
+[Session Bus Policy]
+org.kde.plasma.browser.integration=talk
