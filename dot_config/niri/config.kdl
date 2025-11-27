@@ -372,7 +372,7 @@ binds {
     Mod+A { toggle-overview; }
 
     // Terminal
-    Mod+T { spawn "kitty"; }
+    Mod+T { spawn "ghostty"; }
     // App launcher
     Mod+D { spawn "fuzzel"; }
     // Browser
