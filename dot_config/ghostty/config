@@ -2,8 +2,8 @@
 font-family = Atkinson Hyperlegible Mono
 font-size = 10
 
-# theme (yes, the 3 middle spaces are required)
-theme = Everforest Dark   Hard
+# theme
+theme = Everforest Dark Hard
 
 # split with ctrl+s then direction (using vim or arrow keys)
 keybind = ctrl+s>h=new_split:left
@@ -14,3 +14,7 @@ keybind = ctrl+s>left=new_split:left
 keybind = ctrl+s>down=new_split:down
 keybind = ctrl+s>up=new_split:up
 keybind = ctrl+s>right=new_split:right
+
+# do not start in same dir as other window -- bad detection on window managers
+working-directory = home
+window-inherit-working-directory = false
