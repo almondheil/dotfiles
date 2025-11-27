@@ -5,11 +5,12 @@ require("mason").setup()
 require("mason-lspconfig").setup({
   -- Automatically install these servers
   ensure_installed = {
+    "clangd",        -- C/C++
+    "gopls",         -- Go
     "lua_ls",        -- Lua
+    "marksman",      -- Markdown
     "pyright",       -- Python
     "rust_analyzer", -- Rust
-    "gopls",         -- Go
-    "clangd",        -- C/C++
   },
   automatic_installation = true,
 })
