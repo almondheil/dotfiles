@@ -1,18 +1,33 @@
 [mgr]
+# prepend will overwrite any present keymaps
 prepend_keymap = [
-  # sort directories alongside files with < (shift + ,)
-  # based on <https://github.com/sxyazi/yazi/discussions/677>, modified acc to <https://yazi-rs.github.io/docs/configuration/keymap#mgr.sort>
- 	{ on = [ "<", "m" ], run = [ "sort mtime --dir-first=no --reverse=no", "linemode mtime" ], desc = "Combined sort by modified time" },
-	{ on = [ "<", "M" ], run = [ "sort mtime --dir-first=no --reverse", "linemode mtime" ],    desc = "Combined sort by modified time (reverse)" },
-	{ on = [ "<", "b" ], run = [ "sort btime --dir-first=no --reverse=no", "linemode btime" ], desc = "Combined sort by birth time" },
-	{ on = [ "<", "B" ], run = [ "sort btime --dir-first=no --reverse", "linemode btime" ],    desc = "Combined sort by birth time (reverse)" },
-	{ on = [ "<", "e" ], run = "sort extension --dir-first=no --reverse=no",                   desc = "Combined sort by extension" },
-	{ on = [ "<", "E" ], run = "sort extension --dir-first=no --reverse",                      desc = "Combined sort by extension (reverse)" },
-	{ on = [ "<", "a" ], run = "sort alphabetical --dir-first=no --reverse=no",                desc = "Combined sort alphabetically" },
-	{ on = [ "<", "A" ], run = "sort alphabetical --dir-first=no --reverse",                   desc = "Combined sort alphabetically (reverse)" },
-	{ on = [ "<", "n" ], run = "sort natural --dir-first=no --reverse=no",                     desc = "Combined sort naturally" },
-	{ on = [ "<", "N" ], run = "sort natural --dir-first=no --reverse",                        desc = "Combined sort naturally (reverse)" },
-	{ on = [ "<", "s" ], run = [ "sort size --dir-first=no --reverse=no", "linemode size" ],   desc = "Combined sort by size" },
-	{ on = [ "<", "S" ], run = [ "sort size --dir-first=no --reverse", "linemode size" ],      desc = "Combined sort by size (reverse)" },
-	{ on = [ "<", "r" ], run = "sort random --dir-first=no --reverse=no",                      desc = "Combined sort randomly" },
+  # directories alongside files
+ 	{ on = [ "<", "m" ], run = [ "sort mtime --dir-first=no --reverse=no", "linemode mtime" ],  desc = "*Sort by modified time" },
+	{ on = [ "<", "M" ], run = [ "sort mtime --dir-first=no --reverse", "linemode mtime" ],     desc = "*Sort by modified time (reverse)" },
+	{ on = [ "<", "b" ], run = [ "sort btime --dir-first=no --reverse=no", "linemode btime" ],  desc = "*Sort by birth time" },
+	{ on = [ "<", "B" ], run = [ "sort btime --dir-first=no --reverse", "linemode btime" ],     desc = "*Sort by birth time (reverse)" },
+	{ on = [ "<", "e" ], run = "sort extension --dir-first=no --reverse=no",                    desc = "*Sort by extension" },
+	{ on = [ "<", "E" ], run = "sort extension --dir-first=no --reverse",                       desc = "*Sort by extension (reverse)" },
+	{ on = [ "<", "a" ], run = "sort alphabetical --dir-first=no --reverse=no",                 desc = "*Sort alphabetically" },
+	{ on = [ "<", "A" ], run = "sort alphabetical --dir-first=no --reverse",                    desc = "*Sort alphabetically (reverse)" },
+	{ on = [ "<", "n" ], run = "sort natural --dir-first=no --reverse=no",                      desc = "*Sort naturally" },
+	{ on = [ "<", "N" ], run = "sort natural --dir-first=no --reverse",                         desc = "*Sort naturally (reverse)" },
+	{ on = [ "<", "s" ], run = [ "sort size --dir-first=no --reverse=no", "linemode size" ],    desc = "*Sort by size" },
+	{ on = [ "<", "S" ], run = [ "sort size --dir-first=no --reverse", "linemode size" ],       desc = "*Sort by size (reverse)" },
+	{ on = [ "<", "r" ], run = "sort random --dir-first=no --reverse=no",                       desc = "*Sort randomly" },
+  # directories before files
+  # (overwrite defaults to add --dir-first=yes)
+ 	{ on = [ ",", "m" ], run = [ "sort mtime --dir-first=yes --reverse=no", "linemode mtime" ],  desc = "Sort by modified time" },
+	{ on = [ ",", "M" ], run = [ "sort mtime --dir-first=yes --reverse", "linemode mtime" ],     desc = "Sort by modified time (reverse)" },
+	{ on = [ ",", "b" ], run = [ "sort btime --dir-first=yes --reverse=no", "linemode btime" ],  desc = "Sort by birth time" },
+	{ on = [ ",", "B" ], run = [ "sort btime --dir-first=yes --reverse", "linemode btime" ],     desc = "Sort by birth time (reverse)" },
+	{ on = [ ",", "e" ], run = "sort extension --dir-first=yes --reverse=no",                    desc = "Sort by extension" },
+	{ on = [ ",", "E" ], run = "sort extension --dir-first=yes --reverse",                       desc = "Sort by extension (reverse)" },
+	{ on = [ ",", "a" ], run = "sort alphabetical --dir-first=yes --reverse=no",                 desc = "Sort alphabetically" },
+	{ on = [ ",", "A" ], run = "sort alphabetical --dir-first=yes --reverse",                    desc = "Sort alphabetically (reverse)" },
+	{ on = [ ",", "n" ], run = "sort natural --dir-first=yes --reverse=no",                      desc = "Sort naturally" },
+	{ on = [ ",", "N" ], run = "sort natural --dir-first=yes --reverse",                         desc = "Sort naturally (reverse)" },
+	{ on = [ ",", "s" ], run = [ "sort size --dir-first=yes --reverse=no", "linemode size" ],    desc = "Sort by size" },
+	{ on = [ ",", "S" ], run = [ "sort size --dir-first=yes --reverse", "linemode size" ],       desc = "Sort by size (reverse)" },
+	{ on = [ ",", "r" ], run = "sort random --dir-first=yes --reverse=no",                       desc = "Sort randomly" },
 ]
