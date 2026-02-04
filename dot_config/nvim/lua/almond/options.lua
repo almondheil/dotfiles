@@ -30,3 +30,6 @@ o.formatoptions = 'qctlnj'
 -- disable netrw, we will use vim-tree instead
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
+
+-- chdir to the nearest dir to file, automatically
+o.autochdir = true
