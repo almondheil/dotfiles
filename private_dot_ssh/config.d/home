@@ -1,7 +1,4 @@
 # vim: ft=sshconfig
 
 Host truenas
-  # first IP is on home network, other should work from school
-  # Hostname 192.168.50.67
-  Hostname 98.60.104.136
-  Port 27182
+  Hostname 192.168.4.236
