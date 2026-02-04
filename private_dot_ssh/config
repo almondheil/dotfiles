@@ -1,6 +1,10 @@
-# Set defaults: forward ssh agent, use default key
+# settings under no host apply to all hosts by default
+
 ForwardAgent yes
 IdentityFile ~/.ssh/id_ed25519
+
+# set TERM to something that makes sense to most hosts
+SetEnv TERM=xterm-256color
 
 # Include configs from subdir
 Include config.d/*
