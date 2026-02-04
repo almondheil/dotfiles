@@ -1,14 +1,17 @@
-# aliases.fish - aliases to load
-
-# always replace ls with ls --color=auto
+# list files
 function ls
+	# command ensures we don't eval any functions called ls (aka a loop)
 	command ls --color=auto $argv
 end
-
-# other ls aliases can be much simpler, piggybacking off the --color=auto
-function ll; ls -lh; end
-function la; ls -a; end
-function l.; ls -d .*; end
+function ll
+	ls -lh $argv
+end
+function la
+	ls -a $argv
+end
+function l.
+	ls -d .*
+end
 
 # shortenings and renamings
 function cm; command chezmoi $argv; end
