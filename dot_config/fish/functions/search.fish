@@ -1,6 +1,14 @@
 function search --description 'Match words in any order'
   function _usage 
-    echo "Usage: search 'list of words' [DIR...]"
+    echo "Usage: search [-h|-v] 'list of words' [DIR...]"
+  end
+  function _help
+    _usage
+    echo "Match words in any order. Searches within any DIRs provided, or in"
+    echo "the current directory. Search requires ripgrep with PCRE2 support."
+    echo ""
+    echo "  -h/--help     Show this help message"
+    echo "  -v/--verbose  Print search command before running"
   end
 
   # try to parse args
@@ -9,7 +17,7 @@ function search --description 'Match words in any order'
 
   # give help if they want it (before checking number of args)
   if set -ql _flag_help
-    _usage; return
+    _help; return
   end
 
   # make sure min args are met
