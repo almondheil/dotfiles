@@ -11,7 +11,7 @@ Why am I doing this though?
 
 ## Install and init
 
-Install `chezmoi`. This oneliner installs to `~/.local/bin`.
+Install `chezmoi`. This oneliner installs to `~/.local/bin`, or use a package manager.
 
 ```
 sh -c "$(curl -fsLS get.chezmoi.io/lb)"
@@ -30,8 +30,7 @@ Also install `chezmoi_modify_manager` from wherever is easiest (maybe cargo). ht
 Edit the file `~/.config/chezmoi/chezmoi.toml`. At the top under the `[data]` heading,
 change the variables to match the machine you're on.
 
-When you are done, apply the changes to your system. This will also prompt for the encryption
-key used to protect the sensitive files in the repo.
+When you are done, apply the changes to your system.
 
 ```
 chezmoi apply
