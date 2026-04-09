@@ -44,9 +44,11 @@ window#waybar {
 #workspaces,
 #mpd
 {
-    border-radius: 5px;
-    padding: 5px;
-    margin: 5px;
+    /* size of these widgets tends to decide the size of the whole bar, so control their padding+margin
+     *
+     * the sizes go from the top clockwise btw */
+    padding: 2px 5px 5px 5px;
+    margin: 0 5px 0 5px;
 }
 
 @keyframes blink {
