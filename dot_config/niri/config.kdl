@@ -371,9 +371,10 @@ binds {
     Mod+B hotkey-overlay-title="Spawn Firefox" { spawn "flatpak" "run" "org.mozilla.firefox"; }
 
     // Custom utilities (bottom of the hotkeys list)
-    Mod+V       hotkey-overlay-title="Select from clipboard" { spawn "clipman" "pick" "--tool" "CUSTOM" "--tool-args" "fuzzel --dmenu"; }
-    Mod+R       hotkey-overlay-title="Rename workspace"      { spawn "niri-interactive-rename-workspace"; }
-    Mod+Shift+R hotkey-overlay-title="Clear workspace name"  { spawn "niri-interactive-rename-workspace" ""; }
+    Mod+V       hotkey-overlay-title="Select from clipboard"           { spawn "clipman" "pick" "--tool" "CUSTOM" "--tool-args" "fuzzel --dmenu"; }
+    Mod+Shift+V hotkey-overlay-title="Clear clipboard"                 { spawn "clipman" "clear" "--all"; }
+    Mod+R       hotkey-overlay-title="Rename workspace"                { spawn "niri-interactive-rename-workspace"; }
+    Mod+Shift+R hotkey-overlay-title="Clear workspace name"            { spawn "niri-interactive-rename-workspace" ""; }
     Mod+S       hotkey-overlay-title="Toggle alternate screen scale"   { spawn "niri-toggle-scale"; }
 
 
