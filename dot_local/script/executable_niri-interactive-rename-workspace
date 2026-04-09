@@ -1,0 +1,32 @@
+#!/usr/bin/env fish
+
+function _usage
+  echo "Usage: niri-interactive-rename-workspace [-h | --help] [NAME]"
+end
+
+# flags
+argparse 'h/help' -- $argv
+or { _usage; return 1 }
+if set -ql _flag_help
+  _usage
+  return 0
+end
+
+# max 1 arg
+argparse --max-args 1 -- $argv
+or { _usage; return 1 }
+
+if set -q argv[1]
+  # if arg is provided, use that as the new name
+  set name "$argv[1]"
+else
+  set old (niri msg workspaces | grep '*' | cut -d' ' -f4 | tr -d '"')
+  set name (fuzzel --dmenu --mesg="New workspace name?" --prompt-only="> " --search="$old")
+end
+
+# If we have an argument, use that as the name
+if test -z $name
+  niri msg action unset-workspace-name
+else
+  niri msg action set-workspace-name "$name"
+end
