@@ -363,7 +363,7 @@ binds {
 
     // General utils
     Mod+D hotkey-overlay-title="Open app launcher" { spawn "fuzzel"; }
-    Mod+Alt+L hotkey-overlay-title="Lock screen"   { spawn "swaylock" "-f" "-c" "60A1C7"; }
+    Mod+Alt+L hotkey-overlay-title="Lock screen"   { spawn "swaylock" "-f" "-c" "063316"; }
 
     // Launchers
     Mod+E hotkey-overlay-title="Spawn Thunar"  { spawn "thunar"; }
