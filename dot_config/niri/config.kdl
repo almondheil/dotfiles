@@ -115,10 +115,26 @@ output "Sceptre Tech Inc E24 0x01010101" {
   position x=-316 y=-1080
 }
 
+// Put swaybg inside the overview and disable the workspace shadow
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+overview {
+    workspace-shadow {
+        off
+    }
+}
+
+
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
+    // Since wallpaper shows in the overview, make workspace background
+    // transparent so we can see it.
+    background-color "transparent"
+
     // Set gaps around windows in logical pixels.
     // note: focus ring width eats into gaps, so account for it
     gaps 2
