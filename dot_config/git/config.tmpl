@@ -26,7 +26,10 @@
   sd = diff --staged
   st = status
   tree = log --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit
+  fixup = !git lg --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup
 [pull]
   ff = only
 [push]
   autoSetupRemote = true
+[rebase]
+  autoSquash = true
