@@ -365,18 +365,21 @@ binds {
     // 4-finger upward swipe on the touchpad.
     Mod+A { toggle-overview; }
 
-    // Terminal
-    Mod+T { spawn "kitty"; }
-    // App launcher
-    Mod+D { spawn "fuzzel"; }
-    // Browser
-    Mod+B { spawn "flatpak" "run" "org.mozilla.firefox"; }
-    // File browser
-    Mod+E { spawn "thunar"; }
-    // Clipboard selector
-    Mod+V { spawn "clipman" "pick" "--tool" "CUSTOM" "--tool-args" "fuzzel --dmenu"; }
-    // Screen lock
-    Mod+Alt+L { spawn "swaylock" "-f" "-c" "60A1C7"; }
+    // General utils
+    Mod+D hotkey-overlay-title="Open app launcher" { spawn "fuzzel"; }
+    Mod+Alt+L hotkey-overlay-title="Lock screen"   { spawn "swaylock" "-f" "-c" "60A1C7"; }
+
+    // Launchers
+    Mod+E hotkey-overlay-title="Spawn Thunar"  { spawn "thunar"; }
+    Mod+T hotkey-overlay-title="Spawn Kitty"   { spawn "kitty"; }
+    Mod+B hotkey-overlay-title="Spawn Firefox" { spawn "flatpak" "run" "org.mozilla.firefox"; }
+
+    // Custom utilities (bottom of the hotkeys list)
+    Mod+V       hotkey-overlay-title="Select from clipboard" { spawn "clipman" "pick" "--tool" "CUSTOM" "--tool-args" "fuzzel --dmenu"; }
+    Mod+R       hotkey-overlay-title="Rename workspace"      { spawn "niri-interactive-rename-workspace"; }
+    Mod+Shift+R hotkey-overlay-title="Clear workspace name"  { spawn "niri-interactive-rename-workspace" ""; }
+    Mod+S       hotkey-overlay-title="Toggle alternate screen scale"   { spawn "niri-toggle-scale"; }
+
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
@@ -553,9 +556,6 @@ binds {
     // Expel the bottom window from the focused column to the right.
     Mod+Period { expel-window-from-column; }
 
-    Mod+R { switch-preset-column-width; }
-    Mod+Shift+R { switch-preset-window-height; }
-    Mod+Ctrl+R { reset-window-height; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
 
@@ -581,8 +581,8 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+Space       { toggle-window-floating; }
-    Mod+Shift+Space { switch-focus-between-floating-and-tiling; }
+    Mod+Shift+Space { toggle-window-floating; }
+    Mod+Space { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
