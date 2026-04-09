@@ -1,6 +1,5 @@
 * {
     border: none;
-    min-height: 0;
 
     /* this will use inconsolata for text, but will fallback to
      * ttf-font-awesome for icons (which is desirable) */
@@ -8,24 +7,23 @@
 
     /* adjust font-size value to your liking: */
     font-size: 12px;
-
 }
 
 window#waybar {
-    background-color: #0D0F31;
+    background-color: black;
+    color: white;
 }
 
 /* style workspaces to set colors based on focus */
 #workspaces button {
     color: #777777;
     padding: 0;
-    border-radius: 5px;
 }
 #workspaces button.urgent {
     color: #FF16B0;
 }
 #workspaces button.active {
-    color: #FFFFFF;
+    color: white;
 }
 
 /* individual children within the left and right groups
@@ -47,36 +45,20 @@ window#waybar {
 #mpd
 {
     border-radius: 5px;
-    color: #ffffff;
     padding: 5px;
     margin: 5px;
 }
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
+        background-color: white;
         color: #000000;
     }
 }
 
-/* the jankiest hack.
- * 100 is one char wider than 99, but it turns out that if I remove the
- * side padding it'll keep it the same width 
- *
- * apply this to all things that go to 100 */
-#backlight.full,
-#pulseaudio.full,
-#battery.full {
-    padding: 5px 0;
-}
-
-#clock.time {
-    color: #B3F361;
-}
-
 #battery.critical:not(.charging) {
     background-color: #FF0000;
-    color: #ffffff;
+    color: white;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;

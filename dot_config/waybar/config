@@ -1,61 +1,50 @@
 // vim: ft=jsonc
 
-{ "layer": "top",
-  "position": "right", 
-  "modules-left": ["clock#date", "clock#time", "niri/workspaces"],
-  "modules-center": [],
+{
+  "layer": "top", // Put bar on layer above any windows
+  "position": "top", // Waybar position (top|bottom|left|right)
+  "modules-left": ["niri/workspaces"],
+  "modules-center": ["clock"],
   "modules-right": ["idle_inhibitor", "pulseaudio", "backlight", "battery", "tray"],
 
   // Modules configuration
   "niri/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      // By state
-      "active": "●",
-      "default": "•",
-    },
+    "format": "*{name} ",
   },
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
-      "activated": " ",
-      "deactivated": " "
+      "activated": "",
+      "deactivated": ""
     },
   },
   "tray": {
     // "icon-size": 21,
     "spacing": 10,
   },
-  "clock#date": {
-    "format": " \n{:%m\n%d}",
-    "justify": "center",
+  "clock": {
+    "format": "{:%Y-%m-%d %H:%M}",
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
-      "mode"          : "month",
-      "mode-mon-col"  : 4,
+      "mode"          : "year",
+      "mode-mon-col"  : 3,
+      "on-scroll"     : 1,
       "on-click-right": "mode",
       "format": {
-        "months":   "{}",
-        "days":     "{}",
-        "weeks":    "W{}",
-        "weekdays": "<b>{}</b>", // Su Mo Tu ...
-        "today":    "<b><span color='white' background='black'>{}</span></b>",
+        "months":     "<b>{}</b>",
+        "days":       "{}",
+        "weeks":      "W{}",
+        "weekdays":   "{}",
+        "today":      "<span color='white' background='black'><b>{}</b></span>"
       },
     },
-    "actions": {
-      "on-click-right": "mode",
-    },
-  },
-  "clock#time": {
-    "format": " \n<b>{:%H\n%M}</b>",
-    "justify": "center",
   },
   "backlight": {
     "states": {
       "full": 100,
       "default": 0,
     },
-    "format": " \n{percent:02}",
+    "format": " {percent}",
     "justify": "center",
   },
   "battery": {
@@ -64,19 +53,18 @@
       "warning": 25,
       "critical": 10
     },
-    "format": "{icon}\n{capacity:02}",
-    "format-charging": "\n{capacity:02}",
-    "format-plugged": "\n{capacity:02}",
+    "format": "{icon} {capacity}",
+    "format-charging": " {capacity}",
+    "format-plugged": " {capacity}",
     // note: do not define format-full, it seems to interact badly with full-at
     "format-icons": [" ", " ", " ", " ", " "], // appear to take up 2 spots, so add a space
     "justify": "center",
     "full-at": 80,
   },
   "network": {
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "  {essid}",
-    "format-ethernet": "  {ifname}",
-    "format-linked": "  {ifname} (no-ip)",
+    "format-wifi": "{essid} ",
+    "format-ethernet": "{ifname} ",
+    "format-linked": "{ifname}  (no-ip)",
     "format-disconnected": "NO NETWORK",
     "tooltip": false,
     "on-click": "nm-connection-editor",
@@ -90,23 +78,16 @@
     "on-click": "pavucontrol",
     "justify": "center",
 
-    // default, non-bluetooth output formats. tuned to look OK with vertical bar.
-    // 
-    // muted: fa muted icon stopped working, switched to a different one.
-    // default: volume on newline
-    // full: FF
-    // past full (101% or more): F+
+    // format in most cases
+    "format": "  {volume}{format_source}",
     "format-muted": "0{format_source}",
-    "format": " \n{volume:02}{format_source}",
-    "format-full": " \nFF{format_source}",
-    "format-overfull": " \nF+{format_source}",
 
-    // bluetooth format, should probably have those same states but I haven't spent the time
-    "format-bluetooth": "\n{volume:02}{format_source}",
+    // same states, but when a bluetooth device is connected
+    "format-bluetooth": " {volume:02}{format_source}",
     "format-bluetooth-muted": "0{format_source}",
 
-    // source format shows input with a mic icon, also has no fancy state handling
-    "format-source": "\n\n{volume:02}",
+    // sets {format_source} used above based on whether mic is muted
+    "format-source": " |  {volume:02}",
     "format-source-muted": "",
   },
-}
+  }
