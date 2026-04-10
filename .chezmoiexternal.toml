@@ -1,0 +1,3 @@
+[".local/script"]
+  type = "git-repo"
+  url = "git@github.com:almondheil/script.git"
