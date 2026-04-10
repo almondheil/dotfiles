@@ -1,2 +1,2 @@
 [Context]
-filesystems=/opt:ro;
+filesystems=/opt/zotero:ro
