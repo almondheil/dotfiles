@@ -70,24 +70,19 @@
     "on-click": "nm-connection-editor",
   },
   "pulseaudio": {
-    "states": {
-      "overfull": 999, // 999 to 101 is state "overfull"
-      "full": 100,    // 100-100 "full"
-      "default": 99,  // 99 or below "default"
-    },
     "on-click": "pavucontrol",
     "justify": "center",
 
-    // format in most cases
-    "format": "  {volume}{format_source}",
-    "format-muted": "0{format_source}",
+    // general format
+    "format": "  {format_source}{volume}",
+    "format-muted": " {format_source}",
 
-    // same states, but when a bluetooth device is connected
-    "format-bluetooth": " {volume:02}{format_source}",
-    "format-bluetooth-muted": "0{format_source}",
+    // when connected to bluetooth
+    "format-bluetooth": " {format_source}{volume:02}",
+    "format-bluetooth-muted": " {format_source}",
 
-    // sets {format_source} used above based on whether mic is muted
-    "format-source": " |  {volume:02}",
+    // if mic is unmuted, show an icon. do not show percent
+    "format-source": " ",
     "format-source-muted": "",
   },
   }
