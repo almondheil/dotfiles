@@ -1,2 +1,6 @@
 # let notifications live for 5 seconds unless they specify otherwise
 default-timeout=5000
+
+# set max size for notifications
+width=600
+height=1080
