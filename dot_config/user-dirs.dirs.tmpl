@@ -4,7 +4,7 @@
 # Format is XDG_xxx_DIR="$HOME/yyy", where yyy is a shell-escaped
 # homedir-relative path, or XDG_xxx_DIR="/yyy", where /yyy is an
 # absolute path. No other format is supported.
-# 
+#
 {{- if eq .system "laptop" }}
 XDG_DESKTOP_DIR="$HOME/sync/Desktop"
 XDG_DOCUMENTS_DIR="$HOME/sync/Documents"
@@ -14,6 +14,7 @@ XDG_PICTURES_DIR="$HOME/sync/Pictures"
 XDG_PUBLICSHARE_DIR="$HOME/sync/Public"
 XDG_TEMPLATES_DIR="$HOME/sync/Templates"
 XDG_VIDEOS_DIR="$HOME/sync/Videos"
+XDG_PROJECTS_DIR="$HOME/sync/Projects"
 {{- else }}
 XDG_DESKTOP_DIR="$HOME/Desktop"
 XDG_DOWNLOAD_DIR="$HOME/Downloads"
@@ -23,4 +24,5 @@ XDG_DOCUMENTS_DIR="$HOME/Documents"
 XDG_MUSIC_DIR="$HOME/Music"
 XDG_PICTURES_DIR="$HOME/Pictures"
 XDG_VIDEOS_DIR="$HOME/Videos"
+XDG_PROJECTS_DIR="$HOME/Projects"
 {{- end}}
