@@ -377,10 +377,6 @@ binds {
     Mod+S       hotkey-overlay-title="Toggle alternate screen scale"   { spawn "niri-toggle-scale"; }
 
 
-    // You can also use a shell. Do this if you need pipes, multiple commands, etc.
-    // Note: the entire command goes as a single argument in the end.
-    // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
-
     // Volume keys mappings
     XF86AudioMute              allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute           allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
