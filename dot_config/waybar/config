@@ -81,8 +81,8 @@
     "format-bluetooth": " {format_source}{volume:02}",
     "format-bluetooth-muted": " {format_source}",
 
-    // if mic is unmuted, show an icon. do not show percent
-    "format-source": " ",
-    "format-source-muted": "",
+    // show icon when mic is muted in OS settings
+    "format-source": "",
+    "format-source-muted": " ",
   },
   }
