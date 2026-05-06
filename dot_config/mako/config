@@ -4,3 +4,11 @@ default-timeout=5000
 # set max size for notifications
 width=600
 height=1080
+
+# show notifications even over fullscreen
+# use layer=top to disable this (at least on Niri)
+layer=overlay
+
+# when in do not disturb mode, do not show notifications
+[mode=dnd]
+invisible=1
