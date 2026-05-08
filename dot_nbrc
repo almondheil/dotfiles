@@ -13,4 +13,4 @@
 # https://github.com/xwmx/nb
 ###############################################################################
 
-export NB_DIR="${NB_DIR:-/home/almond/sync/nb}"
+export NB_DIR="${NB_DIR:-$HOME/sync/nb}"
