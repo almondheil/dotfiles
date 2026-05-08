@@ -1,4 +1,4 @@
-require('nvim-treesitter.configs').setup {
+require('nvim-treesitter.config').setup {
   -- Install these parsers by default
   ensure_installed =
   {
