@@ -1,0 +1,13 @@
+[Unit]
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+# clipse starts up wl-clipboard in background, let it fork
+Type=forking
+ExecStart=clipse -listen
+ExecStop=clipse -kill
+
+# clipse -kill also SIGKILLs itself, ignore that
+SuccessExitStatus=15

@@ -341,6 +341,16 @@ window-rule {
     }
 }
 
+// Let clipse window float
+window-rule {
+  match app-id="clipse"
+
+  open-floating true
+  //default-floating-position x=0 y=50 relative-to="top"
+  max-width 600
+  max-height 600
+}
+
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
     // in the end. To find an XKB name for a particular key, you may use a program
@@ -370,12 +380,10 @@ binds {
     Mod+B hotkey-overlay-title="Spawn Firefox" { spawn "flatpak" "run" "org.mozilla.firefox"; }
 
     // Custom utilities (bottom of the hotkeys list)
-    Mod+V       hotkey-overlay-title="Select from clipboard"           { spawn "clipman" "pick" "--tool" "CUSTOM" "--tool-args" "fuzzel --dmenu"; }
-    Mod+Shift+V hotkey-overlay-title="Clear clipboard"                 { spawn "clipman" "clear" "--all"; }
-    Mod+R       hotkey-overlay-title="Rename workspace"                { spawn "niri-rename-workspace"; }
-    Mod+Shift+R hotkey-overlay-title="Clear workspace name"            { spawn "niri-rename-workspace" ""; }
-    Mod+S       hotkey-overlay-title="Toggle alternate screen scale"   { spawn "niri-toggle-scale"; }
-
+    Mod+V       hotkey-overlay-title="Select from clipboard"         { spawn "kitty" "--class" "clipse" "-e" "clipse"; }
+    Mod+R       hotkey-overlay-title="Rename workspace"              { spawn "niri-rename-workspace"; }
+    Mod+Shift+R hotkey-overlay-title="Clear workspace name"          { spawn "niri-rename-workspace" ""; }
+    Mod+S       hotkey-overlay-title="Toggle alternate screen scale" { spawn "niri-toggle-scale"; }
 
     // Volume keys mappings
     XF86AudioMute              allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
