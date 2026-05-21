@@ -1,0 +1,4 @@
+# relative path to bg from homedir
+BG_PATH=sync/Pictures/Wallpapers/short-hike-summit.jpg
+# options to pass to swaybg
+OPTS="-m fill"

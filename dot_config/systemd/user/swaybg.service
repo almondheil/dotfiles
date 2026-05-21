@@ -1,9 +1,10 @@
-# from https://www.atl.wiki/Niri
 [Unit]
+Description=swaybg desktop background
 PartOf=graphical-session.target
 After=graphical-session.target
 Requisite=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/swaybg -m fill -i "%h/sync/Pictures/Wallpapers/short-hike-summit.jpg"
+EnvironmentFile=%h/.config/swaybg/env
+ExecStart=/usr/bin/swaybg $OPTS -i $BG_PATH
 Restart=on-failure
