@@ -371,6 +371,7 @@ binds {
     Mod+A { toggle-overview; }
 
     // General utils
+    Mod+C hotkey-overlay-title="Show current time" { spawn-sh "notify-send \"it is $(date +%H:%M:%S)\" --urgency low --expire-time 1000"; }
     Mod+D hotkey-overlay-title="Open app launcher" { spawn "fuzzel"; }
     Mod+Alt+L hotkey-overlay-title="Lock screen"   { spawn "swaylock" "-f"; }
 
@@ -564,7 +565,7 @@ binds {
     // Makes the column "fill the rest of the space".
     Mod+Ctrl+F { expand-column-to-available-width; }
 
-    Mod+C { center-column; }
+    //Mod+C { center-column; }
 
     // Finer width adjustments.
     // This command can also:
