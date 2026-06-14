@@ -6,4 +6,6 @@ function fish_greeting
    |/( - (     \|
    ------/      -
 "
+  echo $(set_color green)Top 5 TODOs:$(set_color --reset)
+  todo.sh ls | head -n 5
 end
