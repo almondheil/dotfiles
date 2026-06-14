@@ -27,7 +27,7 @@ image/jpeg=org.kde.gwenview.desktop;org.gimp.GIMP.desktop;
 image/png=org.kde.gwenview.desktop;org.gimp.GIMP.desktop;
 text/markdown=com.github.marktext.marktext.desktop;
 text/plain=vim.desktop;
-video/mp4=vlc.desktop;
+video/mp4=mpv.desktop;vlc.desktop;
 video/x-matroska=vlc.desktop;
 x-scheme-handler/etcher=balenaEtcher.desktop
 x-scheme-handler/http=org.mozilla.firefox.desktop;io.github.ungoogled_software.ungoogled_chromium.desktop;xfce4-web-browser.desktop;
@@ -37,6 +37,7 @@ x-scheme-handler/slack=slack.desktop;
 x-scheme-handler/sms=org.gnome.Shell.Extensions.GSConnect.desktop;
 x-scheme-handler/tel=org.gnome.Shell.Extensions.GSConnect.desktop;
 image/heif=org.kde.gwenview.desktop;org.gimp.GIMP.desktop;
+video/webm=mpv.desktop;
 
 [Default Applications]
 application/pdf=okularApplication_pdf.desktop;
@@ -80,3 +81,4 @@ x-scheme-handler/slack=slack.desktop;
 application/xhtml+xml=org.mozilla.firefox.desktop;io.github.ungoogled_software.ungoogled_chromium.desktop;
 application/xhtml_xml=org.mozilla.firefox.desktop;io.github.ungoogled_software.ungoogled_chromium.desktop;
 text/html=org.mozilla.firefox.desktop;io.github.ungoogled_software.ungoogled_chromium.desktop;
+video/webm=mpv.desktop
