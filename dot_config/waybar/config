@@ -35,7 +35,7 @@
         "days":       "{}",
         "weeks":      "W{}",
         "weekdays":   "{}",
-        "today":      "<span color='black' background='white'><b>{}</b></span>"
+        "today":      "<span color='#FFBF00' background='black'><b>{}</b></span>"
       },
     },
   },
