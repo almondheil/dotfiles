@@ -390,14 +390,14 @@ binds {
     // Volume keys mappings
     XF86AudioMute              allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute           allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-    XF86AudioRaiseVolume       allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
-    XF86AudioLowerVolume       allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
+    XF86AudioRaiseVolume       allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.04+"; }
+    XF86AudioLowerVolume       allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.04-"; }
     Shift+XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.01+"; }
     Shift+XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.01-"; }
 
     // Brightness keys mappings
-    XF86MonBrightnessUp         allow-when-locked=true { spawn "brightnessctl" "s" "+5%"; }
-    XF86MonBrightnessDown       allow-when-locked=true { spawn "brightnessctl" "s" "5%-"; }
+    XF86MonBrightnessUp         allow-when-locked=true { spawn "brightnessctl" "s" "+4%"; }
+    XF86MonBrightnessDown       allow-when-locked=true { spawn "brightnessctl" "s" "4%-"; }
     Shift+XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "s" "+1%"; }
     Shift+XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "s" "1%-"; }
 
