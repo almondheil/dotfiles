@@ -1,0 +1,8 @@
+[Unit]
+Description="Move steam screenshots into Pictures dir"
+ConditionPathIsDirectory=%h/.local/share/Steam/userdata
+ConditionPathIsDirectory=%h/sync/Pictures/Steam
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash %h/.local/script/steam-move-screenshots.sh
