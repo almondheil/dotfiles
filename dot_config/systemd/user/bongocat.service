@@ -1,0 +1,11 @@
+[Unit]
+Description=Bongo cat desktop companion
+PartOf=graphical-session.target
+After=graphical-session.target waybar.service
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/wpets-all --watch-config
+
+[Install]
+WantedBy=graphical-session.target
