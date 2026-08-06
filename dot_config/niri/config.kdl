@@ -371,7 +371,7 @@ binds {
     Mod+A { toggle-overview; }
 
     // General utils
-    Mod+C hotkey-overlay-title="Show current time" { spawn-sh "notify-send \"it is $(date +%H:%M:%S)\" --urgency low --expire-time 1000"; }
+    Mod+C hotkey-overlay-title="Show current time" { spawn "quick-status.sh"; }
     Mod+D hotkey-overlay-title="Open app launcher" { spawn "fuzzel"; }
     Mod+Alt+L hotkey-overlay-title="Lock screen"   { spawn "swaylock" "-f"; }
 
