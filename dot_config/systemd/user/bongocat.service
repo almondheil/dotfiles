@@ -5,7 +5,7 @@ After=graphical-session.target waybar.service
 Requisite=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/wpets-all --watch-config
+ExecStart=/usr/bin/bongocat --watch-config
 
 [Install]
 WantedBy=graphical-session.target
