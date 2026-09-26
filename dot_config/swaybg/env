@@ -1,4 +1,4 @@
 # relative path to bg from homedir
-BG_PATH="sync/Pictures/Wallpapers/andrew mcintosh islands of discussion cropped.jpg"
+BG_PATH="sync/Pictures/Wallpapers/andrew mcintosh/andrew-mcintosh-wanderers.jpg"
 # options to pass to swaybg
 OPTS="-m fill"
