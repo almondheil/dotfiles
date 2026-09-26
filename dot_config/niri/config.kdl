@@ -185,7 +185,7 @@ layout {
         //off
 
         // How many logical pixels the ring extends out from the windows.
-        width 4
+        width 5
 
         // Color of the ring on the active monitor.
         active-gradient from="#f0cf" to="#0c0f" angle=45 in="oklch longer hue"
