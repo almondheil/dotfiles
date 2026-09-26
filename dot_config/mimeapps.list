@@ -37,7 +37,7 @@ x-scheme-handler/slack=slack.desktop;
 x-scheme-handler/sms=org.gnome.Shell.Extensions.GSConnect.desktop;
 x-scheme-handler/tel=org.gnome.Shell.Extensions.GSConnect.desktop;
 image/heif=org.kde.gwenview.desktop;org.gimp.GIMP.desktop;
-video/webm=mpv.desktop;
+video/webm=mpv.desktop;vlc.desktop;
 
 [Default Applications]
 application/pdf=okularApplication_pdf.desktop;
@@ -70,7 +70,7 @@ image/x-aseprite=aseprite.desktop
 inode/directory=thunar.desktop;
 text/markdown=com.github.marktext.marktext.desktop
 text/plain=vim.desktop
-video/mp4=vlc.desktop
+video/mp4=mpv.desktop;vlc.desktop;
 video/x-matroska=vlc.desktop
 x-scheme-handler/airtame=airtame-application.desktop;
 x-scheme-handler/etcher=balenaEtcher.desktop
