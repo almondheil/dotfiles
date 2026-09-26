@@ -6,5 +6,5 @@ Requisite=graphical-session.target
 
 [Service]
 EnvironmentFile=%h/.config/swaybg/env
-ExecStart=/usr/bin/swaybg $OPTS -i $BG_PATH
+ExecStart=/usr/bin/swaybg $OPTS -i ${BG_PATH}
 Restart=on-failure
