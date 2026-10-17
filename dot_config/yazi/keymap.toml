@@ -2,19 +2,19 @@
 # prepend will overwrite any present keymaps
 prepend_keymap = [
   # directories alongside files
- 	{ on = [ "<", "m" ], run = [ "sort mtime --dir-first=no --reverse=no", "linemode mtime" ],  desc = "sort: mtime" },
-	{ on = [ "<", "M" ], run = [ "sort mtime --dir-first=no --reverse", "linemode mtime" ],     desc = "rsort: mtime" },
-	{ on = [ "<", "b" ], run = [ "sort btime --dir-first=no --reverse=no", "linemode btime" ],  desc = "sort: btime" },
-	{ on = [ "<", "B" ], run = [ "sort btime --dir-first=no --reverse", "linemode btime" ],     desc = "rsort: btime" },
-	{ on = [ "<", "e" ], run = "sort extension --dir-first=no --reverse=no",                    desc = "sort: ext" },
-	{ on = [ "<", "E" ], run = "sort extension --dir-first=no --reverse",                       desc = "rsort: ext" },
-	{ on = [ "<", "a" ], run = "sort alphabetical --dir-first=no --reverse=no",                 desc = "sort: alpha" },
-	{ on = [ "<", "A" ], run = "sort alphabetical --dir-first=no --reverse",                    desc = "rsort: alpha" },
-	{ on = [ "<", "n" ], run = "sort natural --dir-first=no --reverse=no",                      desc = "sort: natural" },
-	{ on = [ "<", "N" ], run = "sort natural --dir-first=no --reverse",                         desc = "rsort: natural" },
-	{ on = [ "<", "s" ], run = [ "sort size --dir-first=no --reverse=no", "linemode size" ],    desc = "sort: size" },
-	{ on = [ "<", "S" ], run = [ "sort size --dir-first=no --reverse", "linemode size" ],       desc = "rsort: size" },
-	{ on = [ "<", "r" ], run = "sort random --dir-first=no --reverse=no",                       desc = "sort: rand" },
+ 	{ on = [ "<", "m" ], run = [ "sort mtime --dir-first=no --reverse=no", "linemode mtime" ],  desc = "sort: mtime (mix)" },
+	{ on = [ "<", "M" ], run = [ "sort mtime --dir-first=no --reverse", "linemode mtime" ],     desc = "rsort: mtime (mix)" },
+	{ on = [ "<", "b" ], run = [ "sort btime --dir-first=no --reverse=no", "linemode btime" ],  desc = "sort: btime (mix)" },
+	{ on = [ "<", "B" ], run = [ "sort btime --dir-first=no --reverse", "linemode btime" ],     desc = "rsort: btime (mix)" },
+	{ on = [ "<", "e" ], run = "sort extension --dir-first=no --reverse=no",                    desc = "sort: ext (mix)" },
+	{ on = [ "<", "E" ], run = "sort extension --dir-first=no --reverse",                       desc = "rsort: ext (mix)" },
+	{ on = [ "<", "a" ], run = "sort alphabetical --dir-first=no --reverse=no",                 desc = "sort: alpha (mix)" },
+	{ on = [ "<", "A" ], run = "sort alphabetical --dir-first=no --reverse",                    desc = "rsort: alpha (mix)" },
+	{ on = [ "<", "n" ], run = "sort natural --dir-first=no --reverse=no",                      desc = "sort: natural (mix)" },
+	{ on = [ "<", "N" ], run = "sort natural --dir-first=no --reverse",                         desc = "rsort: natural (mix)" },
+	{ on = [ "<", "s" ], run = [ "sort size --dir-first=no --reverse=no", "linemode size" ],    desc = "sort: size (mix)" },
+	{ on = [ "<", "S" ], run = [ "sort size --dir-first=no --reverse", "linemode size" ],       desc = "rsort: size (mix)" },
+	{ on = [ "<", "r" ], run = "sort random --dir-first=no --reverse=no",                       desc = "sort: rand (mix)" },
   # directories before files
   # (overwrite defaults to add --dir-first=yes)
  	{ on = [ ",", "m" ], run = [ "sort mtime --dir-first=yes --reverse=no", "linemode mtime" ],  desc = "sort: mtime (dirfirst)" },
