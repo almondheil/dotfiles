@@ -1,0 +1,12 @@
+# from https://www.atl.wiki/Niri
+[Unit]
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/swayidle
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target
