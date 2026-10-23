@@ -1,8 +1,10 @@
+font=monospace 15
+
 # let notifications live for 5 seconds unless they specify otherwise
 default-timeout=5000
 
 # set max size for notifications
-width=600
+width=400
 height=1080
 
 # show notifications even over fullscreen
